@@ -1,0 +1,137 @@
+@import "kakaotalk"
+
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+
+.chatting-window
+  width: 100%
+  height: 100%
+  background: white
+  border: solid 1px rgb(239, 239, 239)
+  .chatting-top-bar
+    width: 100%
+    height: 50px
+    background: rgb(243, 243, 243)
+    padding: 0 10px
+    display: flex
+    border-bottom: solid 1px rgb(202, 202, 202)
+    .chatting-top-bar-icon
+      width: 40px
+      height: 100%
+      @include center
+      a
+        text-decoration: none
+        color: black
+        &.fas
+          &:hover
+            cursor: pointer
+    .chatting-top-bar-text-zone
+      padding-left: 10px
+      flex: 1
+      display: flex
+      align-items: center
+      padding-top: 3px
+  .chatting-zone
+    overflow-y: auto
+    height: calc(100% - 90px)
+    .chatting-bar
+      padding: 0 5px
+      margin: 5px 0
+      display: flex
+      width: 100%
+      .chatting-bar-image-zone
+        width: 40px
+        height: 40px
+        .chatting-bar-image-circle-zone
+          width: 100%
+          height: 100%
+          border-radius: 50%
+          background: #dbdbdb
+          @include center
+          .fas.fa-user
+            color: white
+            font-size: 18px
+        &.no-image
+          width: 40px
+          height: 25px
+      .chatting-bar-text-zone
+        padding-left: 10px
+        .chatting-bar-name-zone
+          margin-bottom: 5px
+          .chatting-bar-name
+            font-size: 12px
+        .chatting-bar-message-zone
+          border-radius: 5px
+          background: #e0e0e0
+          padding: 8px
+          display: flex
+          align-items: center
+          max-width: 200px
+          .chatting-bar-message
+            font-size: 11px
+            color: #202020
+            line-height: 15px
+      .chatting-bar-time-zone
+        margin-left: 5px
+        display: flex
+        align-items: flex-end
+        .chatting-bar-time
+          font-size: 10px
+          transform: scale(0.9)
+          transform-origin: 0 50%
+          color: #d9d9d9
+      &.send-text
+        justify-content: flex-end
+        .chatting-bar-text-zone
+          .chatting-bar-message-zone
+            background: #3e3e3e
+            .chatting-bar-message
+              color: white
+  .chatting-bottom-bar
+    width: 100%
+    display: flex
+    border-top: solid 1px #d9d9d9
+    .plus-square-icon-zone
+      width: 40px
+      height: 40px
+      @include center
+      .far.fa-plus-square
+        font-size: 20px
+        color: $icon-gray-color
+        &:hover
+          cursor: pointer
+          color: $brown-color
+    textarea
+      width: calc(100% - 120px)
+      height: 40px
+      font-size: 15px
+      border: none
+    .face-icon-zone
+      width: 40px
+      height: 40px
+      @include center
+      .far.fa-smile
+        font-size: 20px
+        color: $icon-gray-color
+        &:hover
+          cursor: pointer
+          color: #e3e235
+    .send-icon-zone
+      width: 40px
+      height: 40px
+      @include center
+      &:hover
+        background: $kakaotalk-background-color
+        cursor: pointer
+        .fas.fa-paper-plane
+          color: $brown-color
+      .fas.fa-paper-plane
+        font-size: 18px
+        color: $icon-gray-color
+
+
+

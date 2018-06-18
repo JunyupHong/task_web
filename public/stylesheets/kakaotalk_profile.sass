@@ -1,0 +1,163 @@
+@import "kakaotalk"
+
+*
+  box-sizing: border-box
+
+body
+  padding: 0
+  margin: 0
+
+.profile-zone
+  background: white
+  border: 1px solid rgba(205, 205, 208, 0.81)
+
+  .background-image-zone
+    width: 100%
+    height: 400px
+    position: relative
+    background-image: url("http://www.jeonpa.co.kr/news/photo/201710/39196_21484_4553.jpg")
+    background-position: center
+    background-size: cover
+    .background-image-top-bar
+      width: 100%
+      height: 40px
+      display: flex
+      .x-image-zone
+        width: 40px
+        height: 100%
+        a
+          width: 100%
+          height: 100%
+          text-decoration: none
+          @include center
+          .fas.fa-times
+            color: white
+            font-size: 20px
+            &:hover
+              cursor: pointer
+              color: $brown-color
+      .empty-zone
+        flex: 1
+      .album-zone
+        width: 50px
+        height: 100%
+        @include center
+        .fas.fa-images
+          font-size: 20px
+          color: white
+          &:hover
+            cursor: pointer
+            color: $brown-color
+    .background-image-bottom-bar
+      position: absolute
+      bottom: 0
+      width: 100%
+      height: 35px
+      display: flex
+      .circle-image-zone
+        width: 35px
+        height: 100%
+        @include center
+        .circle-image
+          border: solid 1px white
+          width: 22px
+          height: 22px
+          border-radius: 50%
+          @include center
+          padding-left: 1px
+          &:hover
+            cursor: pointer
+            background: white
+            .fas
+              color: $brown-color
+          .fas
+            color: white
+            font-size: 10px
+      .empty-zone
+          flex: 1
+    .center-profile-zone
+      position: absolute
+      bottom: -20px
+      left: calc(50% - 45px)
+      width: 90px
+      height: 90px
+      @include center
+      .center-circle-profile-zone
+        border-radius: 50%
+        width: 100%
+        height: 100%
+        background: #dbdbdb
+        @include center
+        &:hover
+          cursor: pointer
+        .fas.fa-user
+          color: white
+          font-size: 45px
+  .profile-bottom-zone
+    width: 100%
+    height: 190px
+    padding-top: 25px
+    .profile-name-bar
+      width: 100%
+      height: 30px
+      @include center
+      .profile-name-zone
+        height: 100%
+        @include center
+        .profile-name
+          font-size: 15px
+      .pencil-icon-zone
+        height: 100%
+        @include center
+        margin-left: 5px
+        .fas.fa-pencil-alt
+          color: $icon-gray-color
+          font-size: 11px
+          &:hover
+            color: $brown-color
+            cursor: pointer
+    .profile-phonenumber-bar
+      width: 100%
+      height: 40px
+      margin-bottom: 10px
+      @include center
+      .profile-phonenumber-zone
+        padding: 5px
+        border: 0.5px solid rgba(229, 229, 232, 0.81)
+        &:hover
+          cursor: pointer
+          background: rgba(229, 229, 232, 0.81)
+        .profile-phonenumber
+          font-size: 10px
+          color: #747474
+    .profile-icon-bar
+      width: 100%
+      height: 75px
+      @include center
+      .profile-icon-zone
+        width: 80px
+        height: 100%
+        a
+          text-decoration: none
+          &.profile-circle-icon-zone
+            margin: 5px 0 5px calc(50% - 20px)
+            width: 40px
+            height: 40px
+            border-radius: 50%
+            background: #eeeeee
+            @include center
+            &:hover
+              background: #493c3c
+              cursor: pointer
+              .fas
+                color: white
+            .fas
+              color: #493c3c
+        .profile-circle-icon-explain-zone
+          width: 100%
+          height: 20%
+          display: flex
+          @include center
+          .profile-circle-icon-explain
+            font-size: 9px
+            color: #252525

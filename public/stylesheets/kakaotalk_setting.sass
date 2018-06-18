@@ -1,0 +1,73 @@
+@import "kakaotalk"
+
+*
+  box-sizing: border-box
+
+
+body
+  margin: 0
+  padding: 0
+
+
+.setting-window
+  width: 100%
+  height: 100%
+  background: white
+  border: solid 1px rgb(239, 239, 239)
+  .setting-top-bar
+    width: 100%
+    height: 50px
+    background: rgb(243, 243, 243)
+    padding: 0 10px
+    display: flex
+    .setting-top-bar-icon
+      width: 40px
+      height: 100%
+      @include center
+      a
+        text-decoration: none
+        color: black
+        &.fas
+          &:hover
+            cursor: pointer
+    .setting-top-bar-text-zone
+      padding-left: 10px
+      flex: 1
+      display: flex
+      align-items: center
+      padding-top: 3px
+  .setting-bottom
+    overflow: auto
+    width: 100%
+    height: calc(100% - 50px)
+    .setting-bar
+      width: 100%
+      height: 50px
+      display: flex
+      padding-left: 10px
+      &:hover
+        background: rgb(250, 250, 250)
+        cursor: pointer
+      .setting-bar-image-zone
+        width: 40px
+        height: 100%
+        @include center
+        .fas
+          font-size: 18px
+          color: #453839
+      .setting-bar-text-zone
+        flex: 1
+        display: flex
+        align-items: center
+        border-bottom: solid 1px #f0f0f0
+        margin-left: 20px
+        padding-top: 5px
+        &.no-border
+          border: none
+        .setting-bar-text
+          font-size: 14px
+    .setting-bar-space
+      width: 100%
+      height: 5px
+      background: rgb(239, 239, 239)
+

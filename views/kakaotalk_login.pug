@@ -1,0 +1,42 @@
+extends kakaotalk_layout
+
+block link
+    link(rel="stylesheet", type="text/css", href="/stylesheets/kakaotalk_login.css")
+
+block bar
+
+block login
+    .kakaotalk-login-top-bar
+        .empty-zone
+        .kakaotalk-login-top-bar-icon-zone
+            .fas.fa-align-left
+        .vertical-line-zone
+            .vertical-line
+
+        .kakaotalk-login-top-bar-icon-zone
+            .fas.fa-window-minimize
+        .kakaotalk-login-top-bar-icon-zone
+            .fas.fa-times
+    .kakaotalk-login-content-zone
+        .kakaotalk-login-TALKimage-zone
+            .kakaotalk-login-TALKimage
+        .kakaotalk-login-zone
+            .login-zone-center
+                .kakaotalk-login-id-zone
+                    input(type="text", placeholder="카카오계정 (이메일)")
+                    .fas.fa-caret-down
+                .kakaotalk-login-password-zone
+                    input(type="password", placeholder="비밀번호")
+        a(href="/kakaotalk/friends", target="_self")
+            .kakaotalk-login-button
+                .kakaotalk-login-button-text 로그인
+        .kakaotalk-login-auto-zone
+            input(type="checkbox")
+            .kakaotalk-login-auto-text 잠금모드로 자동로그인
+        .kakaotalk-login-horizon-line
+        .kakaotalk-login-bottom-text 모바일에서 카카오계정을 확인할 수 있습니다.
+        .kakaotalk-login-bottom-text-underline 카카오계정안내
+        .lost-password-zone
+            .lost-password-box
+                .lost-password-text 비밀번호를 잊어버리셨나요?
+

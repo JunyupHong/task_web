@@ -1,0 +1,25 @@
+$kakaotalk-background-color: #FFEC00
+$brown-color: #715C5E
+$icon-gray-color: rgba(159, 154, 133, 0.7)
+
+
+@mixin center
+  display: flex
+  align-items: center
+  justify-content: center
+
+@mixin kakaotalk-top-bar-size
+  width: 100%
+  height: 40px
+
+
+.window
+  width: 100vw
+  height: 100vh
+  background: #3e3e3e
+  @include center
+  overflow: auto
+  .kakaotalk-window
+    width: 360px
+    height: 590px
+    background: $kakaotalk-background-color

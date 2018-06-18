@@ -1,0 +1,155 @@
+.window {
+  width: 100vw;
+  height: 100vh;
+  background: #3e3e3e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto; }
+  .window .kakaotalk-window {
+    width: 360px;
+    height: 590px;
+    background: #FFEC00; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.chatting-window {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: solid 1px #efefef; }
+  .chatting-window .chatting-top-bar {
+    width: 100%;
+    height: 50px;
+    background: #f3f3f3;
+    padding: 0 10px;
+    display: flex;
+    border-bottom: solid 1px #cacaca; }
+    .chatting-window .chatting-top-bar .chatting-top-bar-icon {
+      width: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .chatting-window .chatting-top-bar .chatting-top-bar-icon a {
+        text-decoration: none;
+        color: black; }
+        .chatting-window .chatting-top-bar .chatting-top-bar-icon a.fas:hover {
+          cursor: pointer; }
+    .chatting-window .chatting-top-bar .chatting-top-bar-text-zone {
+      padding-left: 10px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-top: 3px; }
+  .chatting-window .chatting-zone {
+    overflow-y: auto;
+    height: calc(100% - 90px); }
+    .chatting-window .chatting-zone .chatting-bar {
+      padding: 0 5px;
+      margin: 5px 0;
+      display: flex;
+      width: 100%; }
+      .chatting-window .chatting-zone .chatting-bar .chatting-bar-image-zone {
+        width: 40px;
+        height: 40px; }
+        .chatting-window .chatting-zone .chatting-bar .chatting-bar-image-zone .chatting-bar-image-circle-zone {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background: #dbdbdb;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .chatting-window .chatting-zone .chatting-bar .chatting-bar-image-zone .chatting-bar-image-circle-zone .fas.fa-user {
+            color: white;
+            font-size: 18px; }
+        .chatting-window .chatting-zone .chatting-bar .chatting-bar-image-zone.no-image {
+          width: 40px;
+          height: 25px; }
+      .chatting-window .chatting-zone .chatting-bar .chatting-bar-text-zone {
+        padding-left: 10px; }
+        .chatting-window .chatting-zone .chatting-bar .chatting-bar-text-zone .chatting-bar-name-zone {
+          margin-bottom: 5px; }
+          .chatting-window .chatting-zone .chatting-bar .chatting-bar-text-zone .chatting-bar-name-zone .chatting-bar-name {
+            font-size: 12px; }
+        .chatting-window .chatting-zone .chatting-bar .chatting-bar-text-zone .chatting-bar-message-zone {
+          border-radius: 5px;
+          background: #e0e0e0;
+          padding: 8px;
+          display: flex;
+          align-items: center;
+          max-width: 200px; }
+          .chatting-window .chatting-zone .chatting-bar .chatting-bar-text-zone .chatting-bar-message-zone .chatting-bar-message {
+            font-size: 11px;
+            color: #202020;
+            line-height: 15px; }
+      .chatting-window .chatting-zone .chatting-bar .chatting-bar-time-zone {
+        margin-left: 5px;
+        display: flex;
+        align-items: flex-end; }
+        .chatting-window .chatting-zone .chatting-bar .chatting-bar-time-zone .chatting-bar-time {
+          font-size: 10px;
+          transform: scale(0.9);
+          transform-origin: 0 50%;
+          color: #d9d9d9; }
+      .chatting-window .chatting-zone .chatting-bar.send-text {
+        justify-content: flex-end; }
+        .chatting-window .chatting-zone .chatting-bar.send-text .chatting-bar-text-zone .chatting-bar-message-zone {
+          background: #3e3e3e; }
+          .chatting-window .chatting-zone .chatting-bar.send-text .chatting-bar-text-zone .chatting-bar-message-zone .chatting-bar-message {
+            color: white; }
+  .chatting-window .chatting-bottom-bar {
+    width: 100%;
+    display: flex;
+    border-top: solid 1px #d9d9d9; }
+    .chatting-window .chatting-bottom-bar .plus-square-icon-zone {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .chatting-window .chatting-bottom-bar .plus-square-icon-zone .far.fa-plus-square {
+        font-size: 20px;
+        color: rgba(159, 154, 133, 0.7); }
+        .chatting-window .chatting-bottom-bar .plus-square-icon-zone .far.fa-plus-square:hover {
+          cursor: pointer;
+          color: #715C5E; }
+    .chatting-window .chatting-bottom-bar textarea {
+      width: calc(100% - 120px);
+      height: 40px;
+      font-size: 15px;
+      border: none; }
+    .chatting-window .chatting-bottom-bar .face-icon-zone {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .chatting-window .chatting-bottom-bar .face-icon-zone .far.fa-smile {
+        font-size: 20px;
+        color: rgba(159, 154, 133, 0.7); }
+        .chatting-window .chatting-bottom-bar .face-icon-zone .far.fa-smile:hover {
+          cursor: pointer;
+          color: #e3e235; }
+    .chatting-window .chatting-bottom-bar .send-icon-zone {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .chatting-window .chatting-bottom-bar .send-icon-zone:hover {
+        background: #FFEC00;
+        cursor: pointer; }
+        .chatting-window .chatting-bottom-bar .send-icon-zone:hover .fas.fa-paper-plane {
+          color: #715C5E; }
+      .chatting-window .chatting-bottom-bar .send-icon-zone .fas.fa-paper-plane {
+        font-size: 18px;
+        color: rgba(159, 154, 133, 0.7); }
+
+/*# sourceMappingURL=kakaotalk_chatting.css.map */

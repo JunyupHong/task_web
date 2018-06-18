@@ -1,0 +1,405 @@
+extends layout
+
+block content
+    link(rel="stylesheet", type="text/css", href="/stylesheets/firebase.css")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.0.13/css/all.css", integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp", crossorigin="anonymous")
+
+
+    .window
+        .left-side
+            .nav-title
+                .nav-title-bar
+                    .firebase-image
+                    .text-zone
+                        .text.headtext Firebase
+            .nav-zone
+                .nav-content
+                    .nav-bar
+                        .image
+                            .fas.fa-home
+                        .text-zone
+                            .text Project Overview
+                    .nav-bar
+                        .image
+                            .fas.fa-cog
+                        .text-zone
+                            .text Setting
+                    .nav-bar
+                        .image
+                            .fas.fa-users
+                        .text-zone
+                            .text Authentication
+                    .nav-bar
+                        .image
+                            .fas.fa-database
+                        .text-zone
+                            .text Database
+                    .nav-bar
+                        .image
+                            .fas.fa-folder
+                        .text-zone
+                            .text Storage
+                    .nav-bar
+                        .image
+                            .fas.fa-globe
+                        .text-zone
+                            .text Hosting
+                    .nav-bar
+                        .image
+                            .fas.fa-ellipsis-h
+                        .text-zone
+                            .text Functions
+                    .nav-bar
+                        .image
+                            .fab.fa-medium-m
+                        .text-zone
+                            .text ML Kit
+                    .nav-bar
+                        .image
+                            .fas.fa-tachometer-alt
+                        .text-zone
+                            .text Performance
+                    .nav-bar
+                        .image
+                            .fas.fa-mobile-alt
+                        .text-zone
+                            .text Test Lab
+                    .nav-bar
+                        .image
+                            .fas.fa-hand-point-up
+                        .text-zone
+                            .text Events
+                    .nav-bar
+                        .image
+                            .fas.fa-bars
+                        .text-zone
+                            .text Conversions
+                    .nav-bar
+                        .image
+                            .fas.fa-volleyball-ball
+                        .text-zone
+                            .text Audiences
+                    .nav-bar
+                        .image
+                            .fas.fa-rocket
+                        .text-zone
+                            .text rocket
+                    .nav-bar
+                        .image
+                            .fas.fa-magnet
+                        .text-zone
+                            .text magnet
+                    .nav-bar
+                        .image
+                            .far.fa-clock
+                        .text-zone
+                            .text clock
+                    .nav-bar
+                        .image
+                            .far.fa-clock
+                        .text-zone
+                            .text clock
+                    .nav-bar
+                        .image
+                            .far.fa-clock
+                        .text-zone
+                            .text clock
+        .main-zone
+            .top-bar
+                .top-bar-1
+                    .handycode-app-zone
+                        .handycode-app handycode-app
+                            .fas.fa-caret-down
+                    .empty
+                    .gotext
+                        .text 문서로 이동
+                    .bell-image
+                        .fas.fa-bell
+                    .circle-zone
+                        .circle
+                .top-bar-2
+                    .title-zone
+                        .title 개요
+                    .empty
+                    .question-icon-zone
+                        .fas.fa-question-circle
+            .message-bar
+                .content-zone
+                    .mail-icon-zone
+                        .fas.fa-envelope
+                    .text-zone
+                        .text 새로운 firebase 기능, 연구, 이벤트에 관한 이메일 업데이트를 수신합니다.
+                    .click-box
+                        .text 신청
+                .x-icon-zone
+                    .fas.fa-times
+            .app-bar
+                .content-zone
+                    .text-zone
+                        .text-black 프로젝트의 앱 1개
+                        .empty-text-zone
+                        .text-blue-zone
+                            .text-blue 다른 앱 추가
+                    .box-zone
+                        .box-top
+                            .android-image-zone
+                                .fab.fa-android
+                            .handycode-text-zone
+                                .title Handy Code
+                                .explain com.samsung.android.codemaker
+                            .empty-box-zone
+                            .navi-icon-zone
+                                .fas.fa-ellipsis-v
+                        .box-bottom-2
+                            .box-bottom-zone.border
+                                .box-card-zone
+                                    .box-card
+                                        .top-text 일일 활성 사용자 수
+                                        .number-zone
+                                            .big-number 31
+                                            .percent-number.red -26.2%
+                                        .line-zone.first
+                                    .box-card
+                                        .top-text 월 활성 사용자 수
+                                        .number-zone
+                                            .big-number 622
+                                            .percent-number.green +0.5%
+                                        .line-zone.second
+                            .box-bottom-zone
+                                .box-card-zone
+                                    .box-card
+                                        .top-text 비정상 종료가 발생하지 않은 사용자
+                                        .number-zone
+                                            .big-number 85%
+                                        .line-zone.third
+                                    .box-card
+                                        .top-text 비정상 종료
+                                        .number-zone
+                                            .big-number 176
+                                        .line-zone.fourth
+                        .box-bottom-1
+                            .box-bottom-zone
+                                .box-card-zone
+                                    .box-card
+                                        .top-text 일일 활성 사용자 수
+                                        .number-zone
+                                            .big-number 31
+                                            .percent-number.red -26.2%
+                                        .line-zone.first
+                                    .box-card
+                                        .top-text 월 활성 사용자 수
+                                        .number-zone
+                                            .big-number 622
+                                            .percent-number.green +0.5%
+                                        .line-zone.second
+
+            .card-bar
+                .content-zone
+                    .card-text-title-zone
+                        .card-text-title Firebase 탐색
+                .content-zone.padding
+                    .card-grid-3
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                    .card-grid-2
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                    .card-grid-1
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.analytics
+                                .card-title-zone
+                                    .card-title Analytics
+                                .card-explain-zone 자세한 분석을 확인하여 사용자가 앱에 참여하는 방식을 측정하고 분석할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.authentication
+                                .card-title-zone
+                                    .card-title Authentication
+                                .card-explain-zone 서버측 코드 없이 다양한 제공업체의 사용자를 인증하고 관리할 수 있습니다
+                        .card-grid
+                            .card-zone
+                                .card-image-zone.database
+                                .card-title-zone
+                                    .card-title Database
+                                .card-explain-zone 연결된 모든 클라이언트에서  실시간으로 데이터를 저장하고 동기화 할 수 있습니다

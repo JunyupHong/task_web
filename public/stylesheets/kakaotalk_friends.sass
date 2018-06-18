@@ -1,0 +1,84 @@
+@import kakaotalk
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+
+.friends-window
+  width: 100%
+  height: calc(100% - 40px)
+  background: white
+  border: 1px solid rgba(205, 205, 208, 0.81)
+  border-top: none
+  overflow: auto
+  padding: 0
+.group-name-zone
+  width: 100%
+  height: 30px
+  padding: 5px 10px
+  display: flex
+  align-items: center
+  .group-name
+    font-size: 10px
+    color: #888888
+a
+  width: 100%
+  height: 50px
+  text-decoration: none
+  .friend-bar
+    width: 100%
+    height: 50px
+    padding: 5px 10px
+    display: flex
+    &:hover
+      background: #cecece
+      cursor: pointer
+    .friend-image-zone
+      width: 40px
+      height: 100%
+      .friend-image
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        background: #dbdbdb
+        @include center
+        .fas.fa-user
+          color: white
+          font-size: 20px
+        .plus-friend
+          width: 100%
+          height: 100%
+          border-radius: 50%
+          background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1l0pBTsttctBxAqywaLn3NyTfzLR-8Ah64K_5atl4KZcsDNEH")
+          background-size: cover
+          background-position: center
+    .friend-name-zone
+      flex: 1
+      display: flex
+      align-items: center
+      padding-left: 10px
+      .friend-name
+        font-size: 12px
+        color: black
+    .friend-right-zone
+      display: flex
+      .number-zone
+        @include center
+        .number
+          font-size: 12px
+          color: #888888
+      .arrow-image
+        @include center
+        margin: 0 10px
+        .fas.fa-angle-right
+          font-size: 20px
+          color: #888888
+      .text-zone
+        display: flex
+        align-items: center
+        margin-right: 10px
+        .text
+          font-size: 13px
+          color: #888888

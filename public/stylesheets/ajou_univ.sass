@@ -1,0 +1,282 @@
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+  min-width: 1024px
+
+
+
+.upper-zone
+  width: 100%
+  .top-bar
+    height: 30px
+    .top-bar_bg
+      height: inherit
+      background: #3e3e3e
+
+
+
+  .menu-bar
+    height: 95px
+    .menu-bar_bg
+      height: inherit
+      background-color: rgb(13, 47, 98)
+
+
+.content
+  height: 100%
+  max-width: 1024px
+  margin: auto
+  position: relative
+  .top-bar_content
+    height: inherit
+    position: absolute
+    right: 0
+    display: flex
+    .menu
+      color: #ffffff
+      font-size: 13px
+      text-align: center
+      padding-top: 5px
+      &:hover
+        cursor: pointer
+    input
+      margin-left: 20px
+      height: 90%
+    .search
+      height: 90%
+      background: #888888
+      i
+        &.material-icons
+          cursor: pointer
+
+
+  .ajoulogo-zone
+    position: absolute
+    left: 0
+    height: inherit
+    display: flex
+    padding-top: 20px
+
+    .ajoulogo
+      height: 70%
+      width: 200px
+      background-size: 100% 100%
+      background: url("http://www.ajou.ac.kr/_resources/new/img/gnb/gnb_ajoulogo.png") no-repeat
+      &:hover
+        cursor: pointer
+
+  .menu-bar_content
+    height: inherit
+    position: absolute
+    right: 0
+    display: flex
+    .menu
+      height: inherit
+      color: #ffffff
+      font-size: 18px
+      text-align: center
+      padding: 20px
+      font-weight: 500
+      display: flex
+      align-items: center
+      &:hover
+        cursor: pointer
+        background: #ffffff
+        color: rgb(13, 47, 98)
+        text-decoration: underline
+
+
+
+
+.image-zone
+  background-image: url(http://www.ajou.ac.kr/_attach/new/_images/2018/05/09/180509_main_visual_01_bg.gif)
+  background-size: 100% 100%
+  height: 580px
+  position: relative
+  .icon-left
+    position: absolute
+    left: 0
+    bottom: 30px
+    width: 40px
+    border: rgba(255, 255, 255, 0.6) solid 1px
+    text-align: center
+    &:hover
+      cursor: pointer
+    i
+      color: #ffffff
+      font-size: 35px
+  .icon-right
+    position: absolute
+    left: 50px
+    bottom: 30px
+    width: 40px
+    border: rgba(255, 255, 255, 0.6) solid 1px
+    text-align: center
+    &:hover
+      cursor: pointer
+    i
+      color: #ffffff
+      font-size: 35px
+  .icon-dot
+    position: absolute
+    bottom: 40px
+    i
+      color: rgba(255, 255, 255, 0.3)
+      font-size: 10px
+      &:hover
+        color: rgba(255, 255, 255, 1)
+        cursor: pointer
+    &.one
+      left: 100px
+    &.two
+      left: 115px
+    &.three
+      left: 130px
+    &.four
+      left: 145px
+    &.five
+      left: 160px
+
+.lower-zone
+  .news-zone
+    .content
+      .title-zone
+        height: 100px
+        .title
+          padding-top: 55px
+          font-size: 23px
+          color: #4b4b4b
+      .news
+        display: flex
+        .news-card
+          padding: 0 10px
+          height: 325px
+          flex: 1
+          &.left
+            padding-left: 0
+          &.right
+            padding-right: 0
+          .card-image
+            height: 218px
+            position: relative
+            .image-1
+              background-image: url("http://www.ajou.ac.kr/_attach/new/_images/2018/06/05/34fb8c2e138ee2f5554662827ef0693f.jpg")
+              background-size: 100% 100%
+              height: 100%
+            .image-2
+              background-image: url("http://www.ajou.ac.kr/_attach/new/_images/2018/06/05/0b1813f724f21e3aff29f41baadb4cc6.jpg")
+              background-size: 100% 100%
+              height: 100%
+            .image-3
+              background-image: url("http://www.ajou.ac.kr/_attach/new/_images/2018/05/31/94106f50ee715c51c44d5a0006a59ca5.jpg")
+              background-size: 100% 100%
+              height: 100%
+            .image-wrapper
+              position: absolute
+              left: 0
+              top: 0
+              height: 100%
+              width: 100%
+              background: rgba(0, 0, 0, 0.6)
+              opacity: 0
+              &:hover
+                opacity: 1
+                cursor: pointer
+          .card-text
+            height: 207px
+            .head
+              width: 300px
+              height: 40px
+              font-size: 15px
+              padding: 15px 0
+              font-weight: bold
+              overflow-x: hidden
+              white-space: nowrap
+              text-overflow: ellipsis
+              &:hover
+                text-decoration: underline
+                cursor: pointer
+            .body
+              font-size: 15px
+              height: 45px
+              overflow: hidden
+              line-height: 25px
+              &:hover
+                text-decoration: underline
+                cursor: pointer
+  .notice-zone
+    .content
+      .title-zone
+        height: 100px
+        .title
+          padding-top: 55px
+          font-size: 23px
+          color: #4b4b4b
+      .notice
+        display: flex
+        .cell
+          width : calc(100% / 3)
+          padding: 0 10px
+          &.first
+            padding-left: 0
+            .notice-content
+              display: flex
+              margin-bottom: 10px
+              &.no-margin
+                margin: 0
+              .notice-title-zone
+                flex: 2
+                background: #888888
+                .notice-title
+                  text-align: center
+                  color: #ffffff
+                  font-size: 15px
+              .notice-text-zone
+                flex: 8
+                padding: 0 20px
+                overflow: hidden
+                white-space: nowrap
+                text-overflow: ellipsis
+                .notice-text
+                  &:hover
+                    text-decoration: underline
+                    cursor: pointer
+          &.second
+            .image
+              height: 100%
+              width: 100%
+              background-image: url("http://www.ajou.ac.kr/_resources/new/img/banner/20180428_insight.jpg")
+              background-size: contain
+              &:hover
+                cursor: pointer
+          &.third
+            padding-right: 0
+            .grid
+              display: flex
+              height: calc(100% / 3)
+              padding: 5px 0 5px 0
+              .date-zone
+                flex: 1
+                background: #1d2e56
+                color: #ffffff
+                font-size: 15px
+                text-align: center
+                padding-top: 5px
+              .text-zone
+                flex: 4
+                padding-top: 5px
+                padding-left: 30px
+                overflow: hidden
+                white-space: nowrap
+                text-overflow: ellipsis
+                &:hover
+                  text-decoration: underline
+                  cursor: pointer
+
+
+
+
+

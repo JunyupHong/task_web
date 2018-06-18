@@ -1,0 +1,201 @@
+.window {
+  width: 100vw;
+  height: 100vh;
+  background: #3e3e3e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto; }
+  .window .kakaotalk-window {
+    width: 360px;
+    height: 590px;
+    background: #FFEC00; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+.profile-zone {
+  background: white;
+  border: 1px solid rgba(205, 205, 208, 0.81); }
+  .profile-zone .background-image-zone {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background-image: url("http://www.jeonpa.co.kr/news/photo/201710/39196_21484_4553.jpg");
+    background-position: center;
+    background-size: cover; }
+    .profile-zone .background-image-zone .background-image-top-bar {
+      width: 100%;
+      height: 40px;
+      display: flex; }
+      .profile-zone .background-image-zone .background-image-top-bar .x-image-zone {
+        width: 40px;
+        height: 100%; }
+        .profile-zone .background-image-zone .background-image-top-bar .x-image-zone a {
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .profile-zone .background-image-zone .background-image-top-bar .x-image-zone a .fas.fa-times {
+            color: white;
+            font-size: 20px; }
+            .profile-zone .background-image-zone .background-image-top-bar .x-image-zone a .fas.fa-times:hover {
+              cursor: pointer;
+              color: #715C5E; }
+      .profile-zone .background-image-zone .background-image-top-bar .empty-zone {
+        flex: 1; }
+      .profile-zone .background-image-zone .background-image-top-bar .album-zone {
+        width: 50px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .profile-zone .background-image-zone .background-image-top-bar .album-zone .fas.fa-images {
+          font-size: 20px;
+          color: white; }
+          .profile-zone .background-image-zone .background-image-top-bar .album-zone .fas.fa-images:hover {
+            cursor: pointer;
+            color: #715C5E; }
+    .profile-zone .background-image-zone .background-image-bottom-bar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 35px;
+      display: flex; }
+      .profile-zone .background-image-zone .background-image-bottom-bar .circle-image-zone {
+        width: 35px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .profile-zone .background-image-zone .background-image-bottom-bar .circle-image-zone .circle-image {
+          border: solid 1px white;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-left: 1px; }
+          .profile-zone .background-image-zone .background-image-bottom-bar .circle-image-zone .circle-image:hover {
+            cursor: pointer;
+            background: white; }
+            .profile-zone .background-image-zone .background-image-bottom-bar .circle-image-zone .circle-image:hover .fas {
+              color: #715C5E; }
+          .profile-zone .background-image-zone .background-image-bottom-bar .circle-image-zone .circle-image .fas {
+            color: white;
+            font-size: 10px; }
+      .profile-zone .background-image-zone .background-image-bottom-bar .empty-zone {
+        flex: 1; }
+    .profile-zone .background-image-zone .center-profile-zone {
+      position: absolute;
+      bottom: -20px;
+      left: calc(50% - 45px);
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .profile-zone .background-image-zone .center-profile-zone .center-circle-profile-zone {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: #dbdbdb;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .profile-zone .background-image-zone .center-profile-zone .center-circle-profile-zone:hover {
+          cursor: pointer; }
+        .profile-zone .background-image-zone .center-profile-zone .center-circle-profile-zone .fas.fa-user {
+          color: white;
+          font-size: 45px; }
+  .profile-zone .profile-bottom-zone {
+    width: 100%;
+    height: 190px;
+    padding-top: 25px; }
+    .profile-zone .profile-bottom-zone .profile-name-bar {
+      width: 100%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .profile-zone .profile-bottom-zone .profile-name-bar .profile-name-zone {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .profile-zone .profile-bottom-zone .profile-name-bar .profile-name-zone .profile-name {
+          font-size: 15px; }
+      .profile-zone .profile-bottom-zone .profile-name-bar .pencil-icon-zone {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5px; }
+        .profile-zone .profile-bottom-zone .profile-name-bar .pencil-icon-zone .fas.fa-pencil-alt {
+          color: rgba(159, 154, 133, 0.7);
+          font-size: 11px; }
+          .profile-zone .profile-bottom-zone .profile-name-bar .pencil-icon-zone .fas.fa-pencil-alt:hover {
+            color: #715C5E;
+            cursor: pointer; }
+    .profile-zone .profile-bottom-zone .profile-phonenumber-bar {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .profile-zone .profile-bottom-zone .profile-phonenumber-bar .profile-phonenumber-zone {
+        padding: 5px;
+        border: 0.5px solid rgba(229, 229, 232, 0.81); }
+        .profile-zone .profile-bottom-zone .profile-phonenumber-bar .profile-phonenumber-zone:hover {
+          cursor: pointer;
+          background: rgba(229, 229, 232, 0.81); }
+        .profile-zone .profile-bottom-zone .profile-phonenumber-bar .profile-phonenumber-zone .profile-phonenumber {
+          font-size: 10px;
+          color: #747474; }
+    .profile-zone .profile-bottom-zone .profile-icon-bar {
+      width: 100%;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .profile-zone .profile-bottom-zone .profile-icon-bar .profile-icon-zone {
+        width: 80px;
+        height: 100%; }
+        .profile-zone .profile-bottom-zone .profile-icon-bar .profile-icon-zone a {
+          text-decoration: none; }
+          .profile-zone .profile-bottom-zone .profile-icon-bar .profile-icon-zone a.profile-circle-icon-zone {
+            margin: 5px 0 5px calc(50% - 20px);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #eeeeee;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .profile-zone .profile-bottom-zone .profile-icon-bar .profile-icon-zone a.profile-circle-icon-zone:hover {
+              background: #493c3c;
+              cursor: pointer; }
+              .profile-zone .profile-bottom-zone .profile-icon-bar .profile-icon-zone a.profile-circle-icon-zone:hover .fas {
+                color: white; }
+            .profile-zone .profile-bottom-zone .profile-icon-bar .profile-icon-zone a.profile-circle-icon-zone .fas {
+              color: #493c3c; }
+        .profile-zone .profile-bottom-zone .profile-icon-bar .profile-icon-zone .profile-circle-icon-explain-zone {
+          width: 100%;
+          height: 20%;
+          display: flex;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .profile-zone .profile-bottom-zone .profile-icon-bar .profile-icon-zone .profile-circle-icon-explain-zone .profile-circle-icon-explain {
+            font-size: 9px;
+            color: #252525; }
+
+/*# sourceMappingURL=kakaotalk_profile.css.map */

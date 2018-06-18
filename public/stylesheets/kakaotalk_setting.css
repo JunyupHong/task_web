@@ -1,0 +1,86 @@
+.window {
+  width: 100vw;
+  height: 100vh;
+  background: #3e3e3e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto; }
+  .window .kakaotalk-window {
+    width: 360px;
+    height: 590px;
+    background: #FFEC00; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.setting-window {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: solid 1px #efefef; }
+  .setting-window .setting-top-bar {
+    width: 100%;
+    height: 50px;
+    background: #f3f3f3;
+    padding: 0 10px;
+    display: flex; }
+    .setting-window .setting-top-bar .setting-top-bar-icon {
+      width: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .setting-window .setting-top-bar .setting-top-bar-icon a {
+        text-decoration: none;
+        color: black; }
+        .setting-window .setting-top-bar .setting-top-bar-icon a.fas:hover {
+          cursor: pointer; }
+    .setting-window .setting-top-bar .setting-top-bar-text-zone {
+      padding-left: 10px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-top: 3px; }
+  .setting-window .setting-bottom {
+    overflow: auto;
+    width: 100%;
+    height: calc(100% - 50px); }
+    .setting-window .setting-bottom .setting-bar {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      padding-left: 10px; }
+      .setting-window .setting-bottom .setting-bar:hover {
+        background: #fafafa;
+        cursor: pointer; }
+      .setting-window .setting-bottom .setting-bar .setting-bar-image-zone {
+        width: 40px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .setting-window .setting-bottom .setting-bar .setting-bar-image-zone .fas {
+          font-size: 18px;
+          color: #453839; }
+      .setting-window .setting-bottom .setting-bar .setting-bar-text-zone {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        border-bottom: solid 1px #f0f0f0;
+        margin-left: 20px;
+        padding-top: 5px; }
+        .setting-window .setting-bottom .setting-bar .setting-bar-text-zone.no-border {
+          border: none; }
+        .setting-window .setting-bottom .setting-bar .setting-bar-text-zone .setting-bar-text {
+          font-size: 14px; }
+    .setting-window .setting-bottom .setting-bar-space {
+      width: 100%;
+      height: 5px;
+      background: #efefef; }
+
+/*# sourceMappingURL=kakaotalk_setting.css.map */

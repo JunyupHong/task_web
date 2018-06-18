@@ -1,0 +1,58 @@
+extends kakaotalk_layout
+
+block link
+    link(rel="stylesheet", type="text/css", href="/stylesheets/kakaotalk_profile.css")
+
+block bar
+
+block profile
+    .profile-zone
+        .background-image-zone
+            .background-image-top-bar
+                .x-image-zone
+                    a(href="/kakaotalk/friends", target="_self")
+                        .fas.fa-times
+                .empty-zone
+                .album-zone
+                    .fas.fa-images
+            .background-image-bottom-bar
+                .circle-image-zone
+                    .circle-image
+                        .fas.fa-gift
+                .circle-image-zone
+                    .circle-image
+                        .fas.fa-won-sign
+                .empty-zone
+                .circle-image-zone
+                    .circle-image
+                        .fas.fa-star
+            .center-profile-zone
+                .center-circle-profile-zone
+                    .fas.fa-user
+        .profile-bottom-zone
+            .profile-name-bar
+                .profile-name-zone
+                    .profile-name 홍준엽
+                .pencil-icon-zone
+                    .fas.fa-pencil-alt
+            .profile-phonenumber-bar
+                .profile-phonenumber-zone
+                    .profile-phonenumber 010-8897-5489
+            .profile-icon-bar
+                .profile-icon-zone
+                    a(href="/kakaotalk/chatting", target="_self").profile-circle-icon-zone
+                        .fas.fa-comment
+                    .profile-circle-icon-explain-zone
+                        .profile-circle-icon-explain 1:1 채팅
+                .profile-icon-zone
+                    a.profile-circle-icon-zone
+                        .fas.fa-phone
+                    .profile-circle-icon-explain-zone
+                        .profile-circle-icon-explain 무료통화
+                .profile-icon-zone
+                    a.profile-circle-icon-zone
+                        .fas.fa-quote-right
+                    .profile-circle-icon-explain-zone
+                        .profile-circle-icon-explain 카카오스토리
+
+

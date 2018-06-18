@@ -1,0 +1,81 @@
+.window {
+  width: 100vw;
+  height: 100vh;
+  background: #3e3e3e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto; }
+  .window .kakaotalk-window {
+    width: 360px;
+    height: 590px;
+    background: #FFEC00; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+.chatting-room-window {
+  width: 100%;
+  height: calc(100% - 40px);
+  background: white;
+  border: 1px solid rgba(205, 205, 208, 0.81);
+  border-top: none;
+  overflow: auto; }
+  .chatting-room-window a {
+    text-decoration: none; }
+    .chatting-room-window a.chatting-friend-bar {
+      width: 100%;
+      height: calc(100% / 8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      margin: 10px 0; }
+      .chatting-room-window a.chatting-friend-bar:hover {
+        background: #cdcdcd;
+        cursor: pointer; }
+      .chatting-room-window a.chatting-friend-bar .profile-image-zone {
+        width: 60px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .chatting-room-window a.chatting-friend-bar .profile-image-zone .profile-image {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          background: #dbdbdb;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .chatting-room-window a.chatting-friend-bar .profile-image-zone .profile-image .fas.fa-user {
+            color: white;
+            font-size: 25px; }
+      .chatting-room-window a.chatting-friend-bar .message-zone {
+        flex: 1;
+        height: 100%;
+        padding: 0 10px;
+        margin-top: 12px; }
+        .chatting-room-window a.chatting-friend-bar .message-zone .name-zone {
+          padding: 3px 0 5px 0;
+          font-size: 13px;
+          color: #3b3b3b; }
+        .chatting-room-window a.chatting-friend-bar .message-zone .text-zone {
+          overflow: hidden;
+          width: 85%;
+          font-size: 10px;
+          color: #717171; }
+      .chatting-room-window a.chatting-friend-bar .time-zone {
+        margin-top: 12px;
+        width: 60px;
+        height: 100%;
+        font-size: 8px;
+        text-align: right;
+        padding: 3px 5px 3px 0;
+        color: #bbbbbb; }
+
+/*# sourceMappingURL=kakaotalk_chatting_rooms.css.map */
