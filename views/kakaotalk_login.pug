@@ -23,13 +23,12 @@ block login
         .kakaotalk-login-zone
             .login-zone-center
                 .kakaotalk-login-id-zone
-                    input(type="text", placeholder="카카오계정 (이메일)")
+                    input(type="text", placeholder="카카오계정 (이메일)")#email
                     .fas.fa-caret-down
                 .kakaotalk-login-password-zone
-                    input(type="password", placeholder="비밀번호")
-        a(href="/kakaotalk/friends", target="_self")
-            .kakaotalk-login-button
-                .kakaotalk-login-button-text 로그인
+                    input(type="password", placeholder="비밀번호")#password
+        .kakaotalk-login-button#login-button
+            .kakaotalk-login-button-text 로그인
         .kakaotalk-login-auto-zone
             input(type="checkbox")
             .kakaotalk-login-auto-text 잠금모드로 자동로그인
@@ -40,3 +39,7 @@ block login
             .lost-password-box
                 .lost-password-text 비밀번호를 잊어버리셨나요?
 
+
+    script(src="/javascripts/kakaotalk_login.js")
+    // script(src="/javascripts/test.js")
+    // 브라우저는 public폴더가 root이므로 src가 /로 시작!

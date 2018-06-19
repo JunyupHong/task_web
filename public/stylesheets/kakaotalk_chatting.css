@@ -84,7 +84,8 @@ body {
           padding: 8px;
           display: flex;
           align-items: center;
-          max-width: 200px; }
+          max-width: 200px;
+          word-break: break-all; }
           .chatting-window .chatting-zone .chatting-bar .chatting-bar-text-zone .chatting-bar-message-zone .chatting-bar-message {
             font-size: 11px;
             color: #202020;
@@ -121,6 +122,12 @@ body {
           cursor: pointer;
           color: #715C5E; }
     .chatting-window .chatting-bottom-bar textarea {
+      width: calc(100% - 120px);
+      height: 40px;
+      font-size: 15px;
+      border: none;
+      resize: none; }
+    .chatting-window .chatting-bottom-bar input {
       width: calc(100% - 120px);
       height: 40px;
       font-size: 15px;

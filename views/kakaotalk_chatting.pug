@@ -122,9 +122,12 @@ block chatting
         .chatting-bottom-bar
             .plus-square-icon-zone
                 .far.fa-plus-square
-            textarea(cols=10)
+            textarea(cols=10)#messageInput
+            //input(type="text")#messageInput
             .face-icon-zone
                 .far.fa-smile
-            .send-icon-zone
+            .send-icon-zone#sender
                 .fas.fa-paper-plane
+
+    script(src="/javascripts/kakaotalk_chatting.js")
 

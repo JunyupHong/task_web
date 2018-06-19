@@ -47,4 +47,9 @@ router.get('/kakaotalk/setting', function(req, res, next) {
     res.render('kakaotalk_setting');
 });
 
+
+router.get('/calculator', function(req, res, next) {
+    res.render('calculator');
+});
+
 module.exports = router;
