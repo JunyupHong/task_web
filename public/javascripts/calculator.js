@@ -17,6 +17,8 @@ $number.on('click', function () {
         value += $(this).text();
         resultNumber.text(value);
     }
+    if(resultNumber.text().length < 20)
+        resultNumber.css('font-size', 40 - resultNumber.text().length / 6 * 8 + 'px');
 });
 
 var addCommand = function(attribute) {
@@ -29,13 +31,16 @@ $command.on('click', function () {
     if(resultNumber.text() !== '0') {
         switch (attribute) {
             case "clear":
-                alert(resultNumber.length);
                 resultNumber.text(0);
                 value = 0;
                 break;
             case "plus-minus":
-                var plusminusNumber = Number(resultNumber.text()) * -1;
-                resultNumber.text(plusminusNumber);
+                temp = Number(resultNumber.text()) * -1;
+                resultNumber.text(temp);
+                break;
+            case ".":
+                temp = resultNumber.text() + '.';
+                resultNumber.text(temp);
                 break;
             case "%":
                 temp = addCommand(attribute);
@@ -60,7 +65,8 @@ $command.on('click', function () {
         }
     }
     if(resultNumber.text().length < 24)
-        resultNumber.css('font-size', 40 - ( resultNumber.text().length / 8 * 10) + 'px');
+        resultNumber.css('font-size', 40-resultNumber.text().length/10 * 10 + 'px');
+        // resultNumber.css('font-size', (resultNumber.text().length / 6 * 5) + 'px');
 });
 
 
