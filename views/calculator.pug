@@ -1,0 +1,63 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/calculator.css')
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.0.13/css/all.css", integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp", crossorigin="anonymous")
+        script(src="https://code.jquery.com/jquery-3.3.1.min.js", integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", crossorigin="anonymous")
+
+    body
+        .window
+            .calculator-window
+                .result-bar
+                    .result-top-bar
+                        .result-top-bar-circle-zone
+                            .circle(color="red")
+                                i.fas.fa-times
+                            .circle(color="yellow")
+                                i.fas.fa-minus
+                            .circle(color="green")
+                                i.fas.fa-plus
+                    .result-bottom-bar
+                        .result-number 0
+                .click-zone
+                    .click-box.command(command="clear")
+                        .text-zone AC
+                    .click-box.command(command="plus-minus")
+                        .text-zone +/-
+                    .click-box.command(command="%")
+                        .text-zone %
+                    .click-box.command(color="orange", command="/")
+                        .text-zone /
+                    .click-box.number
+                        .text-zone 7
+                    .click-box.number
+                        .text-zone 8
+                    .click-box.number
+                        .text-zone 9
+                    .click-box.command(color="orange", command="*")
+                        .text-zone x
+                    .click-box.number
+                        .text-zone 4
+                    .click-box.number
+                        .text-zone 5
+                    .click-box.number
+                        .text-zone 6
+                    .click-box.command(color="orange", command="-")
+                        .text-zone -
+                    .click-box.number
+                        .text-zone 1
+                    .click-box.number
+                        .text-zone 2
+                    .click-box.number
+                        .text-zone 3
+                    .click-box.command(color="orange", command="+")
+                        .text-zone +
+                    .click-box(double-size).number
+                        .text-zone 0
+                    .click-box.command(command=".")
+                        .text-zone .
+                    .click-box.exec(color="orange")
+                        .text-zone =
+
+        script(src="/javascripts/calculator.js")
