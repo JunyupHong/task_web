@@ -77,7 +77,5 @@ $sender.on('click', function () {   // 익명함수 -> 한번만 사용
 // $sender.on('click', sendMessage);    // 익명함수를 나눠서 !
 
 
-
-
 // a태그의 href와 유사
 // window.location = 'http://naver.com';

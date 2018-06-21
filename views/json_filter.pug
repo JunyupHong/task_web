@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/json_filter.css')
+        script(src="https://code.jquery.com/jquery-3.3.1.min.js", integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", crossorigin="anonymous")
+
+    body
+        .json-filter-window
+            .selector-bar
+                .select-name 성별
+                select(index = 0)
+                    option ALL
+                    option 남
+                    option 여
+                .select-name 학번
+                select(index = 1)
+                    option ALL
+                    option 2010
+                    option 2014
+                    option 2015
+                    option 2016
+                .select-name 나이
+                select(index = 2)
+                    option ALL
+                    option 28
+                    option 24
+                    option 22
+            .filter-result-zone
+
+
+
+
+
+
+        script(src="/javascripts/json_filter.js")

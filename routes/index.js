@@ -6,7 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
 router.get('/ajou_univ', function(req, res, next) {
     res.render('ajou_univ');
 });
@@ -47,9 +46,12 @@ router.get('/kakaotalk/setting', function(req, res, next) {
     res.render('kakaotalk_setting');
 });
 
-
 router.get('/calculator', function(req, res, next) {
     res.render('calculator');
+});
+
+router.get('/jsonfilter', function(req, res, next) {
+    res.render('json_filter');
 });
 
 module.exports = router;
