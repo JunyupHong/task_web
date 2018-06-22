@@ -1,5 +1,4 @@
-(function () {
-
+(function() {
 
     const info = [
         {
@@ -60,94 +59,110 @@
 
     ];
 
-
-    const filters = ['ALL', 'ALL', 'ALL'];
-
-    $('select').on('change', function () {
-        const changedFilter = $(this).find('option:selected').text();
-        const index = $(this).attr('index') * 1;
-        filters[index] = changedFilter;
-        console.log(filters);
-        filterInfo();
-    });
-
-    const mergeInfos = function (arr) {
-        const mergedInfo = [];
-        for (var i = 0; i < arr.length; i++)
-            for (var j = 0; j < arr[i].items.length; j++)
-                mergedInfo.push(arr[i].items);
-        console.log('marge', arr);
-        return mergedInfo;
-    };
-
-
-    let selectedInfo;
-    const setSelectedInfo = function (arr) {
-        selectedInfo = [];
-        for (var i = 0; i < arr.length; i++)
-            selectedInfo.push(arr[i]);
-    };
-
-    const filterInfo = function () {
-        if (filters[0] === 'ALL') {
-            setSelectedInfo(mergeInfos(info));
-        } else if (filters[0] === info[0].gender) {
-            setSelectedInfo(info[0].items);
-        } else if (filters[0] === info[1].gender) {
-            setSelectedInfo(info[1].items);
-        }
-
-        if(filters[1] === 'ALL') {
-            setSelectedInfo(mergeInfos(selectedInfo));
-        } else if (filters[1] === selectedInfo[0].year + '') {
-            setSelectedInfo(selectedInfo[0].items);
-        } else if (filters[1] === selectedInfo[1].year + '') {
-            setSelectedInfo(selectedInfo[1].items);
-        } else if (filters[1] === selectedInfo[2].year + '') {
-            setSelectedInfo(selectedInfo[2].items);
-        } else if (filters[1] === selectedInfo[3].year + '') {
-            setSelectedInfo(selectedInfo[3].items);
-        }
-
-
-        if(filters[2] === 'ALL') {
-            console.log('problem' , selectedInfo);
-            //setSelectedInfo(mergeInfos(selectedInfo));
-        } else if (filters[2] === selectedInfo[0].age + '') {
-            setSelectedInfo(selectedInfo[0].items);
-        } else if (filters[2] === selectedInfo[1].age + '') {
-            setSelectedInfo(selectedInfo[1].items);
-        } else if (filters[2] === selectedInfo[2].age + '') {
-            setSelectedInfo(selectedInfo[2].items);
-        }
-
-        console.log('items', selectedInfo);
-
-        getName(selectedInfo);
-
-    };
-
+    const infoClone = JSON.parse(JSON.stringify(info));
+    const $select = $('select');
+    const filter = ['ALL', 'ALL', 'ALL'];
+    let filteredInfo = [];
     let names = [];
+    const $filterResultZone = $('.filter-result-zone');
 
-    const getName = function (arr) {
+
+    const mergeInfo = function(arr) {
+        const margedInfo = [];
+        for(var i = 0; i < arr.length; i++) {
+            for(var j = 0; j< arr[i].items.length; j++) {
+                margedInfo.push(arr[i].items[j]);
+            }
+        }
+        return margedInfo;
+    };
+
+    const setFilteredInfo = function(arr) {
+        const temp = [];
+        for(var i = 0; i < arr.length; i ++)
+            temp.push(arr[i]);
+        filteredInfo = [];
+        filteredInfo = JSON.parse(JSON.stringify(temp));
+    };
+
+
+    const obtainNames = function(arr) {
         names = [];
-        for(var i = 0; i < arr.length ; i++)
-        {
+        for(var i = 0; i < arr.length; i++) {
             names.push(arr[i].name);
         }
         console.log(names);
     };
 
-    const append = function () {
-        $('.filter-result-zone').append(`
-        <div class="name-zone">공현식</div>
-        <div class="name-zone">이수정</div>
-        <div class="name-zone">허재종</div>
-        <div class="name-zone">홍주원</div>
-        <div class="name-zone">홍준엽</div>
-        `);
+
+    const showScreen = function () {
+        for(var i = 0; i < names.length; i++) {
+            $filterResultZone.append(`
+                <div class="name-zone">${names[i]}</div>
+            `);
+        }
     };
 
 
+    $select.on('change', function () {
+        const index = $(this).attr('index') * 1;
+        filter[index] = $(this).find('option:selected').text() + '';
+
+        console.log(filter);
+
+
+        if(filter[0] === 'ALL') {
+            setFilteredInfo(mergeInfo(infoClone));
+        } else if(filter[0] === infoClone[0].gender) {
+            setFilteredInfo(infoClone[0].items);
+        } else if(filter[0] === infoClone[1].gender) {
+            setFilteredInfo(infoClone[1].items);
+        }
+
+        console.log('filter1', filteredInfo);
+
+        if(filter[1] === 'ALL') {
+            setFilteredInfo(mergeInfo(filteredInfo));
+        } else {
+            let change = false;
+            for(var i = 0; i < filteredInfo.length; i++) {
+                if(filter[1] === filteredInfo[i].year + '') {
+                    setFilteredInfo(filteredInfo[i].items);
+                    change = true;
+                }
+            }
+            if(!change) {
+                filteredInfo = [];
+            }
+        }
+         console.log('filter2', filteredInfo);
+
+        if(filter[2] === 'ALL') {
+            setFilteredInfo(mergeInfo(filteredInfo));
+        } else {
+            let change = false;
+            for(var i = 0; i < filteredInfo.length; i++) {
+                if(filter[2] === filteredInfo[i].age + '') {
+                    setFilteredInfo(filteredInfo[i].items);
+                    change = true;
+                }
+            }
+            if(!change) {
+                filteredInfo = [];
+            }
+        }
+        console.log('filter3', filteredInfo);
+
+        obtainNames(filteredInfo);
+
+        $filterResultZone.empty();
+        showScreen();
+
+    });
+
+
+
+
 })();
+
 
