@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     const info = [
         {
@@ -67,28 +67,28 @@
     const $filterResultZone = $('.filter-result-zone');
 
 
-    const mergeInfo = function(arr) {
+    const mergeInfo = function (arr) {
         const margedInfo = [];
-        for(var i = 0; i < arr.length; i++) {
-            for(var j = 0; j< arr[i].items.length; j++) {
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < arr[i].items.length; j++) {
                 margedInfo.push(arr[i].items[j]);
             }
         }
         return margedInfo;
     };
 
-    const setFilteredInfo = function(arr) {
+    const setFilteredInfo = function (arr) {
         const temp = [];
-        for(var i = 0; i < arr.length; i ++)
+        for (var i = 0; i < arr.length; i++)
             temp.push(arr[i]);
         filteredInfo = [];
         filteredInfo = JSON.parse(JSON.stringify(temp));
     };
 
 
-    const obtainNames = function(arr) {
+    const obtainNames = function (arr) {
         names = [];
-        for(var i = 0; i < arr.length; i++) {
+        for (var i = 0; i < arr.length; i++) {
             names.push(arr[i].name);
         }
         console.log(names);
@@ -96,7 +96,7 @@
 
 
     const showScreen = function () {
-        for(var i = 0; i < names.length; i++) {
+        for (var i = 0; i < names.length; i++) {
             $filterResultZone.append(`
                 <div class="name-zone">${names[i]}</div>
             `);
@@ -109,45 +109,44 @@
         filter[index] = $(this).find('option:selected').text() + '';
 
         console.log(filter);
-
-
-        if(filter[0] === 'ALL') {
+        
+        if (filter[0] === 'ALL') {
             setFilteredInfo(mergeInfo(infoClone));
-        } else if(filter[0] === infoClone[0].gender) {
+        } else if (filter[0] === infoClone[0].gender) {
             setFilteredInfo(infoClone[0].items);
-        } else if(filter[0] === infoClone[1].gender) {
+        } else if (filter[0] === infoClone[1].gender) {
             setFilteredInfo(infoClone[1].items);
         }
 
         console.log('filter1', filteredInfo);
 
-        if(filter[1] === 'ALL') {
+        if (filter[1] === 'ALL') {
             setFilteredInfo(mergeInfo(filteredInfo));
         } else {
             let change = false;
-            for(var i = 0; i < filteredInfo.length; i++) {
-                if(filter[1] === filteredInfo[i].year + '') {
+            for (var i = 0; i < filteredInfo.length; i++) {
+                if (filter[1] === filteredInfo[i].year + '') {
                     setFilteredInfo(filteredInfo[i].items);
                     change = true;
                 }
             }
-            if(!change) {
+            if (!change) {
                 filteredInfo = [];
             }
         }
-         console.log('filter2', filteredInfo);
+        console.log('filter2', filteredInfo);
 
-        if(filter[2] === 'ALL') {
+        if (filter[2] === 'ALL') {
             setFilteredInfo(mergeInfo(filteredInfo));
         } else {
             let change = false;
-            for(var i = 0; i < filteredInfo.length; i++) {
-                if(filter[2] === filteredInfo[i].age + '') {
+            for (var i = 0; i < filteredInfo.length; i++) {
+                if (filter[2] === filteredInfo[i].age + '') {
                     setFilteredInfo(filteredInfo[i].items);
                     change = true;
                 }
             }
-            if(!change) {
+            if (!change) {
                 filteredInfo = [];
             }
         }
@@ -159,9 +158,6 @@
         showScreen();
 
     });
-
-
-
 
 })();
 
