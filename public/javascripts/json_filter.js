@@ -109,7 +109,6 @@
         filter[index] = $(this).find('option:selected').text() + '';
 
         console.log(filter);
-        
         if (filter[0] === 'ALL') {
             setFilteredInfo(mergeInfo(infoClone));
         } else if (filter[0] === infoClone[0].gender) {

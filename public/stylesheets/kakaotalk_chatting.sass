@@ -43,6 +43,19 @@ body
       margin: 5px 0
       display: flex
       width: 100%
+      &:hover
+        .delete-button
+          i.fas.fa-times
+            visibility: visible
+      .delete-button
+        padding-top: 18px
+        i.fas.fa-times
+          color: #c8c8c8
+          font-size: 12px
+          visibility: hidden
+          &:hover
+            cursor: pointer
+            color: #888888
       .chatting-bar-image-zone
         width: 40px
         height: 40px
