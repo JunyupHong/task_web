@@ -1,133 +1,239 @@
+/*
+    $chattingZone.scrollTop($chattingZone[0].scrollHeight);
 
-const $inputMessage = $('#messageInput');
-const $chattingZone = $('#chattingZone');
+    chatApi.sendMessage({Id}, {Message});
+    chatApi.deleteMessage({MessageId});
 
-const myId = '홍준엽';
+    // 메세지 추가 이벤트
+    chatApi.on('child_added', function (d) {
+    // { messageId : { id : , message : , date: }}
 
-let inputMessage = '';
+    });
 
-$inputMessage.keydown(function (event) {
-    if(event.keyCode === 13)
-        inputMessage = $inputMessage.val();
-});
-$inputMessage.keyup(function(event) {
-    if(event.keyCode === 13) {
-        chatApi.sendMessage(myId, inputMessage);
-        $inputMessage.val('');
+    // 메세지 삭제 이벤트
+    chatApi.on('child_removed', function (d) {
+    // { messageId : { id : , message : , date: }}
+
+    });
+
+ */
+
+
+const $chattingZone = $('.chatting-zone');
+
+const template = `<div class="chatting-bar">
+                        <div class="chatting-bar-image-zone">
+                            <div class="chatting-bar-image-circle-zone">
+                            <div class="fas fa-user"></div>
+                            </div>
+                        </div>
+                        <div class="chatting-bar-text-zone">
+                            <div class="chatting-bar-name-zone">
+                                <div class="chatting-bar-name">홍준엽</div>
+                            </div>
+                            <div class="chatting-bar-message-zone">
+                                <div class="chatting-bar-message">가나다</div>
+                            </div>
+                            </div>
+                        <div class="chatting-bar-time-zone">
+                            <div class="chatting-bar-time">오후 12:28</div>
+                            </div>
+                        <div class="delete-button"><i class="fas fa-times"></i></div>
+                        <div class="empty-zone"></div>
+                    </div>`;
+
+// const sendTemplate = `<div class="chatting-bar send-text">
+//                          <div class="chatting-bar-image-zone">
+//                             <div class="chatting-bar-image-circle-zone">
+//                                 <div class="fas fa-user"></div>
+//                             </div>
+//                          </div>
+//                          <div class="chatting-bar-text-zone">
+//                             <div class="chatting-bar-name-zone">
+//                                 <div class="chatting-bar-name">홍준엽</div>
+//                             </div>
+//                             <div class="chatting-bar-message-zone">
+//                                 <div class="chatting-bar-message">가나다</div>
+//                             </div>
+//                          </div>
+//                          <div class="chatting-bar-time-zone">
+//                            <div class="chatting-bar-time">오후 12:28</div>
+//                          </div>
+//                          <div class="delete-button"><i class="fas fa-times"></i></div>
+//                          <div class="empty-zone"></div>
+//                      </div>`;
+
+
+function Element(messageId, isMine) {
+    const $template = $(template);
+    $template.attr('id', messageId);
+    const that = this;
+
+    if (isMine) {
+        $template.find('.chatting-bar-image-zone').remove();
+        $template.find('.chatting-bar-name-zone').remove();
+        $template.find('i.fas.fa-times').on('click', function () {
+            chatApi.deleteMessage(messageId);
+        });
+        $template.find('.chatting-bar-text-zone').css('margin-top', '15px')
+    } else {
+        $template.find('.delete-button').remove();
     }
-});
 
-
-// 메세지 추가 이벤트
-chatApi.on('child_added', function (d) {
-// { messageId : { id : , message : , date: }}
-
-    const selectedMessageId = Object.keys(d)[0];
-    const selectedMessage = d[selectedMessageId];
-    const time = new Date(selectedMessage.date);
-    let amPm = '';
-
-    console.log(selectedMessage);
-
-
-    if(time.getHours() >= 12) {
-        amPm = '오후';
-    }else {
-        amPm = '오전';
+    if (isMine !== undefined && isMine) {
+        $template.addClass('send-text');
     }
-    if(selectedMessage.id === '홍준엽') {
-        $('.chatting-zone').append(`
-        <div class="chatting-bar send-text">
-            <div class="delete-button">
-                <i class="fas fa-times" type="deleteButton" messageId="${selectedMessageId}"></i>
-            </div>
-            <div class="chatting-bar-time-zone">
-                <div class="chatting-bar-time">${amPm + ' '+ time.getHours() % 12 + ':' + time.getMinutes()}</div>
-            </div>
-            <div class="chatting-bar-text-zone">
-                <div class="chatting-bar-message-zone">
-                    <div class="chatting-bar-message">${selectedMessage.message}</div>
-                </div>
-            </div>
-        </div>
-        `)
-    }
-    else {
-        if(true) {
-            $('.chatting-zone').append(`
-            <div class="chatting-bar">
-                <div class="chatting-bar-image-zone">
-                    <div class="chatting-bar-image-circle-zone">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-                <div class="chatting-bar-text-zone">
-                    <div class="chatting-bar-name-zone">
-                        <div class="chatting-bar-name">${selectedMessage.id}</div>
-                    </div>
-                    <div class="chatting-bar-message-zone">
-                        <div class="chatting-bar-message">${selectedMessage.message}</div>
-                    </div>
-                </div>
-                <div class="chatting-bar-time-zone">
-                    <div class="chatting-bar-time">${amPm + ' '+ time.getHours() % 12 + ':' + time.getMinutes()}</div>
-                </div>
-            </div>
-            `)
+
+
+    let elementData = {};
+
+    this.setMessage = function (data) {
+        elementData = data;
+        $template.find('.chatting-bar-name').text(data.id);
+        $template.find('.chatting-bar-message').text(data.message);
+        $template.find('.chatting-bar-time').text(data.date);
+    };
+
+    this.getTime = function () {
+        return elementData.date;
+    };
+
+    this.getName = function () {
+        return elementData.id;
+    };
+
+
+    this.setVisibleTime = function (bool) {
+        $template.find('.chatting-bar-time-zone').css('visibility', bool ? 'visible' : 'hidden');
+    };
+
+    this.setVisibleName = function (bool) {
+        $template.find('.chatting-bar-name-zone').css('display', bool ? 'block' : 'none');
+    };
+
+    this.setVisibleImage = function (bool) {
+        $template.find('.chatting-bar-image-zone').css('visibility', bool ? 'visible' : 'hidden');
+        if(bool === false) {
+            $template.find('.chatting-bar-image-zone').css('height', '20px');
+        }
+    };
+    this.setVisibleXButton = function (bool) {
+        $template.find('.deleteButton').css('display', boll ? 'block' : 'none');
+    };
+
+    let prev = null;
+    this.prev = function (element) {
+        if (element === undefined) {
+            return prev;
+        }
+        prev = element;
+        that.update();
+    };
+
+    let next = null;
+    this.next = function (element) {
+        if (element === undefined) {
+            return next;
+        }
+        next = element;
+        that.update();
+    };
+
+
+    this.update = function () {
+        if (prev !== null
+            && prev.getName() === that.getName()
+            && prev.getTime() === that.getTime()) {
+            that.setVisibleImage(false);
+            that.setVisibleName(false);
         }
         else {
-            $('.chatting-zone').append(`
-            <div class="chatting-bar">
-                <div class="chatting-bar-image-zone no-image"></div>
-                <div class="chatting-bar-text-zone">
-                    <div class="chatting-bar-message-zone">
-                        <div class="chatting-bar-message">${selectedMessage.message}</div>
-                    </div>
-                </div>
-                <div class="chatting-bar-time-zone">
-                    <div class="chatting-bar-time">${selectedMessage.date}</div>
-                </div>
-                
-            </div>
-            `)
+            that.setVisibleImage(true);
+            that.setVisibleName(true);
+        }
+
+        if (next !== null
+            && next.getName() === that.getName()
+            & next.getTime() === that.getTime()) {
+            that.setVisibleTime(false);
+        }
+        else {
+            that.setVisibleTime(true);
+        }
+    };
+
+
+    this.remove = function () {
+        $template.remove();
+
+        const prev = that.prev();
+        const next = that.next();
+        if (prev !== null)
+            prev.next(next);
+
+        if (next !== null)
+            next.prev(prev);
+    };
+
+
+    $template.appendTo($chattingZone);
+    return this;
+
+}
+
+
+
+
+const myId = '홍준엽';
+const elements = {};
+
+let lastElement = null;
+
+
+const $textarea = $('textarea');
+
+$textarea.on('keyup', function () {
+    const message = $textarea.val().replace(/\n/g, "");
+    if (event.keyCode === 13) {
+
+        $textarea.val('');
+        if (message !== '') {
+            chatApi.sendMessage(myId, message);
         }
     }
+});
+
+
+chatApi.on('child_added', function (d) {
+    // { messageId : { id : , message : , date: }}
+
+    const id = Object.keys(d)[0];
+    const data = d[id];
+    const date = new Date(data.date);
+    const dateString = `${date.getHours() > 11 ? '오후' : '오전'} ${date.getHours() % 13}:${date.getMinutes()}`;
+    data.date = dateString;
+    const ele = new Element(id, myId === data.id);
+    ele.setMessage(data);
+
+    if (lastElement !== null) {
+        lastElement.next(ele);
+        ele.prev(lastElement);
+    }
+    elements[id] = ele;
+    lastElement = ele;
+
     $chattingZone.scrollTop($chattingZone[0].scrollHeight);
+
+
 });
 
 
-var clickedBar;
-
-$chattingZone.delegate('i.fas.fa-times', 'click', function () {
-    // chatApi.deleteMessage({messageId});
-    var messageId = $(this).attr('messageId');
-    console.log(messageId);
-    chatApi.deleteMessage(messageId);
-    clickedBar = $(this);
-    console.log('clickbar', clickedBar);
-});
-
-// const deleteButton = $('i.fas.fa-times');
-//
-// deleteButton.on('click', type='deleteButton', function () {
-//     // chatApi.deleteMessage({messageId});
-//     console.log($(this));
-//     console.log('click');
-//     var messageId = $(this).attr('messageId');
-//     console.log(messageId);
-//     chatApi.deleteMessage(messageId);
-// });
-
-
-// 메세지 삭제 이벤트
 chatApi.on('child_removed', function (d) {
-// { messageId : { id : , message : , date: }}
-
-    console.log('delete');
-    const deleteMessageId = Object.keys(d)[0];
-    const deleteButton = $('.delete-button');
-    deleteButton.find(`i.fas.fa-times[messageId="${deleteMessageId}"]`).parent().parent().remove();
-
-
+    // { messageId : { id : , message : , date: }}
+    const id = Object.keys(d)[0];
+    const ele = elements[id];
+    ele.remove();
+    delete elements[id];
 
 });
+
