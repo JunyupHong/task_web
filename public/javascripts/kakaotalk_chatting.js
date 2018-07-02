@@ -64,18 +64,38 @@ const template = `<div class="chatting-bar">
 //                      </div>`;
 
 
+
+const $modal = $('.modal-background');
+
+const $yesButton = $('.modal-button[id = "yes"]');
+const $noButton = $('.modal-button[id = "no"]');
+
+
+$yesButton.on('click', function () {
+    chatApi.deleteMessage($('.modal').attr('id'));
+    $modal.css('display', 'none');
+});
+$noButton.on('click', function () {
+    $modal.css('display', 'none');
+});
+
+
 function Element(messageId, isMine) {
+    const that = this;
     const $template = $(template);
     $template.attr('id', messageId);
-    const that = this;
 
     if (isMine) {
         $template.find('.chatting-bar-image-zone').remove();
         $template.find('.chatting-bar-name-zone').remove();
+
         $template.find('i.fas.fa-times').on('click', function () {
-            chatApi.deleteMessage(messageId);
+            //chatApi.deleteMessage(messageId);
+            $modal.css('display', 'block');
+            $('.modal').attr('id', messageId);
+
         });
-        $template.find('.chatting-bar-text-zone').css('margin-top', '15px')
+
     } else {
         $template.find('.delete-button').remove();
     }
@@ -116,9 +136,6 @@ function Element(messageId, isMine) {
         if(bool === false) {
             $template.find('.chatting-bar-image-zone').css('height', '20px');
         }
-    };
-    this.setVisibleXButton = function (bool) {
-        $template.find('.deleteButton').css('display', boll ? 'block' : 'none');
     };
 
     let prev = null;

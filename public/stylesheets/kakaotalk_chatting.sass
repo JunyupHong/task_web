@@ -6,6 +6,44 @@
 body
   margin: 0
   padding: 0
+
+.modal-background
+  background: rgba(17, 17, 17, 0.66)
+  width: 100%
+  height: 100%
+  position: fixed
+  left: 0
+  top: 0
+  z-index: 1
+  display: none
+  .modal
+    position: fixed
+    left: calc((100% - 400px) / 2)
+    top: calc((100% - 200px) / 2)
+    width: 400px
+    height: 200px
+    background: white
+    margin: auto
+    border: solid 1px
+    .modal-text
+      height: 50%
+      text-align: center
+      font-size: 30px
+      line-height: 100px
+    .modal-button-zone
+      display: flex
+      height: 50%
+      justify-content: space-between
+      .modal-button
+        border: solid 1px
+        flex: 1
+        line-height: 100px
+        text-align: center
+        &:hover
+          cursor: pointer
+          background: $kakaotalk-background-color
+
+
 .empty-zone
   flex: 1
 .chatting-window
