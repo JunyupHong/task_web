@@ -21,11 +21,13 @@
 
 
 
-let a = 'in function';
-const b = 'func';
-if(true) {
-    console.log(b);
-    // const b = 'block';
-    // console.log(b);
-}
-console.log(b);
+// let a = 'in function';
+// const b = 'func';
+// if(true) {
+//     console.log(b);
+//     // const b = 'block';
+//     // console.log(b);
+// }
+// console.log(b);
+
+

@@ -1,0 +1,155 @@
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+  width: 100vw
+  height: 100vh
+  background: #D6D5D5
+  display: flex
+  align-items: center
+  justify-content: center
+
+.navigation
+  width: 100%
+  height: 56px
+  background: #6200EE
+
+.container
+  width: 1200px
+  height: 600px
+  display: flex
+  background: white
+  border-radius: 8px
+  position: relative
+  i.fas.fa-angle-right
+    position: absolute
+    bottom: 10px
+    left: 10px
+    z-index: 1
+    font-size: 26px
+    display: none
+    &:hover
+      cursor: pointer
+      color: #888888
+  i.fas.fa-angle-left
+    position: absolute
+    bottom: 10px
+    left: 10px
+    z-index: 1
+    font-size: 26px
+    &:hover
+      cursor: pointer
+      color: #888888
+
+  .left-zone
+    height: 100%
+    width: 300px
+    overflow-x: hidden
+    transition: width 0.6s
+    .navigation
+      font-size: 28px
+      line-height: 56px
+      color: #ecebeb
+      font-weight: 500
+      padding-left: 16px
+      border-top-left-radius: 8px
+      overflow-x: hidden
+    .option-zone
+      border-right: solid 3px #D6D5D5
+      position: relative
+      height: calc(100% - 56px)
+      .option-name
+        padding: 16px
+        color: #555555
+        font-size: 12px
+        min-width: 200px
+        overflow-x: hidden
+      .option-bar
+        width: 100%
+        height: 40px
+        display: flex
+        align-items: center
+        padding-left: 16px
+        overflow-x: hidden
+        min-width: 100px
+
+        .option-bar-box
+          width: 24px
+          height: 24px
+          min-width: 24px
+          border: solid 2px #666666
+          &.check-box
+            border-radius: 3px
+            i.fas.fa-check
+              font-size: 14px
+              padding: 3px 0 0 3px
+              color: white
+            &:hover
+              cursor: pointer
+              background: #6200EE
+              border-color: #6200EE
+          &.radio-button
+            border-radius: 50%
+            .radio-button-circle
+              width: 70%
+              height: 70%
+              margin: 3px 0 0 3px
+              border-radius: 50%
+            &:hover
+              cursor: pointer
+              border-color: #6200EE
+              .radio-button-circle
+                background-color: #6200EE
+        .option-bar-text
+          min-width: 100px
+          margin-left: 16px
+          color: #333333
+          width: 200px
+          overflow-x: hidden
+      .line
+        width: 100%
+        border: solid 0.5px #D6D5D5
+        margin: 24px 0
+
+  .right-zone
+    flex: 1
+    .navigation
+      border-top-right-radius: 8px
+      .input-zone
+        padding-left: 20px
+        position: relative
+        input
+          font-size: 20px
+          width: 300px
+          height: 40px
+          padding-left: 32px
+          border-radius: 5px
+          border: none
+          margin-top: 8px
+        i.fas.fa-search
+          position: absolute
+          left: 30px
+          font-size: 18px
+          padding-top: 12px
+          margin-top: 8px
+          color: #888888
+    .main-content
+      height: calc(100% - 56px)
+      .text-zone
+        width: 100%
+        height: 70%
+        padding: 16px
+        .text
+          width: 100%
+          height: 100%
+          text-align: justify
+          font-size: 18px
+          color: #333333
+          overflow: auto
+      .search-result-zone
+        width: 100%
+        height: 30%
+        border-top: solid 2px #D6D5D5
+        padding: 16px

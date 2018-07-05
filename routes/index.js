@@ -54,4 +54,9 @@ router.get('/jsonfilter', function(req, res, next) {
     res.render('json_filter');
 });
 
+
+router.get('/textFinder', function(req, res, next) {
+    res.render('textFinder');
+});
+
 module.exports = router;
