@@ -1,0 +1,62 @@
+extends fractalLayout
+
+block content
+    .content
+        .option-zone
+            .option-zone-name Option
+            .option-bar
+                .first-bar
+                    .option-bar-name Root
+                    input(placeholder='root')#root
+                .second-bar
+                    .bar
+                        .bar-left
+                        .bar-right
+            .option-bar
+                .first-bar
+                    .option-bar-name Angle
+                    input#angle(placeholder='angle')
+                .second-bar
+                    .bar
+                        .bar-left
+                        .bar-right
+            .option-bar
+                .first-bar
+                    .option-bar-name Length
+                    input#length(placeholder='length')
+                .second-bar
+                    .bar
+                        .bar-left
+                        .bar-right
+            .option-bar
+                .first-bar
+                    .option-bar-name Depth
+                    input(placeholder='depth')#depth
+                .second-bar
+                    .bar
+                        .bar-left
+                        .bar-right
+            .option-bar
+                .first-bar
+                    .option-bar-name Color
+                    input(placeholder='from')#colorFrom
+                    input(placeholder='to')#colorTo
+                .second-bar
+                    .bar
+                        .bar-left
+                        .bar-right
+
+
+
+        .sketch-zone#sketch-holder
+
+
+        .button-zone
+            .draw-button draw
+
+
+
+    script(src="/javascripts/p5.js")
+    script(src="/javascripts/fractalSketch.js")
+
+

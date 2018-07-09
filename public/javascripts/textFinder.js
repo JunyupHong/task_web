@@ -120,3 +120,16 @@ const changeTextStyle = function (changeText) {
 
 };
 
+
+
+function Person() {
+
+}
+
+
+
+console.dir(Person);
+console.dir(Person.prototype);
+// console.dir(foo);
+// console.dir(foo.prototype);
+

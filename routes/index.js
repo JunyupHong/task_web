@@ -59,4 +59,8 @@ router.get('/textFinder', function(req, res, next) {
     res.render('textFinder');
 });
 
+router.get('/fractal', function(req, res, next) {
+    res.render('fractal');
+});
+
 module.exports = router;
