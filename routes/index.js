@@ -63,4 +63,8 @@ router.get('/fractal', function(req, res, next) {
     res.render('fractal');
 });
 
+router.get('/index2', function(req, res, next) {
+    res.render('index2');
+});
+
 module.exports = router;

@@ -1,62 +1,113 @@
 extends fractalLayout
 
 block content
-    .content
-        .option-zone
-            .option-zone-name Option
-            .option-bar
-                .first-bar
-                    .option-bar-name Root
-                    input(placeholder='root')#root
-                .second-bar
-                    .bar
-                        .bar-left
-                        .bar-right
-            .option-bar
-                .first-bar
-                    .option-bar-name Angle
-                    input#angle(placeholder='angle')
-                .second-bar
-                    .bar
-                        .bar-left
-                        .bar-right
-            .option-bar
-                .first-bar
-                    .option-bar-name Length
-                    input#length(placeholder='length')
-                .second-bar
-                    .bar
-                        .bar-left
-                        .bar-right
-            .option-bar
-                .first-bar
-                    .option-bar-name Depth
-                    input(placeholder='depth')#depth
-                .second-bar
-                    .bar
-                        .bar-left
-                        .bar-right
-            .option-bar
-                .first-bar
-                    .option-bar-name Color
-                    input(placeholder='from')#colorFrom
-                    input(placeholder='to')#colorTo
-                .second-bar
-                    .bar
-                        .bar-left
-                        .bar-right
-
-
-
-        .sketch-zone#sketch-holder
-
-
+    .option-zone
+        .option-name option
+        .option-bar-zone
+            .option-bar-name First Branch Count
+            input(type='range', min=0, max=10, step = 1, name='firstBranchCount')
+            .option-bar-name First Branch Length
+            input(type='range', min=0, max=100, step = 0.01, name='firstBranchLength')
+            .option-bar-name Depth
+            input(type='range', min=0, max=10, step = 1, name='depth')
+            .option-bar-name Child Branch Count
+            input(type='range', min=0, max=6, step = 1, name='childBranchCount')
+            .option-bar-name Child Branch Angle
+            input(type='range', min=0, max=50, step = 1, name='childBranchAngle')
+            .option-bar-name Child Branch Length (radio)
+            input(type='range', min=0, max=2, step = 0.01, name='childBranchLength')
+            .option-bar-name Start Color
+            input(type='color', name='startColor', value='#ff0000')
+            .option-bar-name End Color
+            input(type='color', name='endColor', value='#ffffff')
         .button-zone
-            .draw-button draw
+            .draw-button#exec exec
+            .draw-button#pause pause
+    #canvas
 
 
 
     script(src="/javascripts/p5.js")
     script(src="/javascripts/fractalSketch.js")
+    script(src="/javascripts/fractal.js")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //.content
+    //    .option-zone
+    //        .option-zone-name Option
+    //        .option-bar
+    //            .first-bar
+    //                .option-bar-name Root
+    //                input#root(placeholder='root')
+    //            .second-bar
+    //                .bar
+    //                    .bar-left
+    //                    .bar-right
+    //        .option-bar
+    //            .first-bar
+    //                .option-bar-name Angle
+    //                input#angle(placeholder='angle')
+    //            .second-bar
+    //                .bar
+    //                    .bar-left
+    //                    .bar-right
+    //        .option-bar
+    //            .first-bar
+    //                .option-bar-name Length
+    //                input#length(placeholder='length')
+    //            .second-bar
+    //                .bar
+    //                    .bar-left
+    //                    .bar-right
+    //        .option-bar
+    //            .first-bar
+    //                .option-bar-name Depth
+    //                input(placeholder='depth')#depth
+    //            .second-bar
+    //                .bar
+    //                    .bar-left
+    //                    .bar-right
+    //        .option-bar
+    //            .first-bar
+    //                .option-bar-name Color
+    //                input(placeholder='from')#colorFrom
+    //                input(placeholder='to')#colorTo
+    //
+    //
+    //
+    //
+    //    .sketch-zone#sketch-holder
+    //
+    //
+    //    .button-zone
+    //        .draw-button draw
+    //
+
+
 
 

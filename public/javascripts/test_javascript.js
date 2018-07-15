@@ -30,3 +30,20 @@
 // }
 // console.log(b);
 
+
+
+
+var obj = {
+    name: 'obj',
+};
+var objArray = {
+    name : 'objArray',
+    length: 10
+};
+
+Array.prototype.push.apply(obj, ['a', 'b']);
+
+console.log(obj);
+
+Array.prototype.push.apply(objArray, ['a', 'b']);
+console.log(objArray);
