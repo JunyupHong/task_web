@@ -4,7 +4,8 @@
 body {
   margin: 0;
   padding: 0;
-  min-width: 1024px; }
+  width: 100vw;
+  height: 100vh; }
 
 .content {
   width: 1024px;
@@ -35,18 +36,20 @@ i:hover {
     border: solid 3px #009bff; }
 
 .fixed-zone {
-  z-index: 0;
+  z-index: 3;
   height: 400px;
   position: fixed;
   background: white;
   border-bottom: solid 1px #b4b4b4;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  left: calc((100% - 1024px)/2); }
   .fixed-zone .content {
     position: relative; }
     .fixed-zone .content .top-bar {
       display: flex;
       height: 60px;
-      border-bottom: solid 1px #b4b4b4; }
+      border-bottom: solid 1px #b4b4b4;
+      padding: 0 10px; }
       .fixed-zone .content .top-bar .camera-image {
         height: 80%;
         flex: 1;
@@ -198,9 +201,7 @@ i:hover {
 
 .moved-zone {
   z-index: -1;
-  position: absolute;
-  left: 0;
-  top: 400px;
+  padding-top: 400px;
   background: rgba(235, 235, 235, 0.87); }
   .moved-zone .content {
     width: 1054px;

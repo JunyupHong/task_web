@@ -2,18 +2,108 @@
   box-sizing: border-box; }
 
 body {
-  padding: 0;
   margin: 0;
   width: 100vw;
-  height: 100vh;
-  position: relative; }
+  padding: 0; }
   body #canvas {
     position: absolute;
     z-index: -3; }
   body .content-zone {
     margin: auto;
-    width: 1024px;
-    height: 100vh;
+    width: 960px;
     border: solid 1px; }
+    body .content-zone .profile-zone {
+      width: 100%;
+      height: 200px;
+      background: #F2FDFF;
+      opacity: 0.8; }
+    body .content-zone .menu-bar {
+      width: 100%;
+      height: 60px;
+      display: flex; }
+      body .content-zone .menu-bar .menu {
+        flex: 1;
+        border: solid 0.5px #cccccc;
+        background: #ffffff;
+        opacity: 0.7;
+        text-align: center;
+        line-height: 60px;
+        font-size: 30px;
+        color: #D5D5D5; }
+        body .content-zone .menu-bar .menu:hover {
+          color: #000000;
+          border-bottom: solid 2.5px #0CBCD5; }
+    body .content-zone .main-zone {
+      width: 100%;
+      height: 800px;
+      background: #F1F1F1;
+      opacity: 0.7;
+      padding: 50px 60px;
+      overflow-y: auto; }
+      body .content-zone .main-zone .count-zone {
+        width: 100%;
+        height: 130px;
+        border: solid 1px #cccccc;
+        background: #ffffff;
+        opacity: 0.8;
+        display: flex;
+        padding: 15px 0; }
+        body .content-zone .main-zone .count-zone .count-box {
+          flex: 1;
+          text-align: center; }
+          body .content-zone .main-zone .count-zone .count-box .count-box-number {
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            color: #222222;
+            font-weight: 500;
+            font-size: 50px; }
+          body .content-zone .main-zone .count-zone .count-box .count-box-name {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            color: #888888;
+            font-size: 20px; }
+      body .content-zone .main-zone .card-zone {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center; }
+        body .content-zone .main-zone .card-zone .card {
+          width: calc(100%/3);
+          height: 330px;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          body .content-zone .main-zone .card-zone .card .card-content {
+            width: 95%;
+            height: 95%;
+            border: solid 1px;
+            background: white; }
+            body .content-zone .main-zone .card-zone .card .card-content .card-image {
+              width: 100%;
+              height: 70%;
+              background-size: cover;
+              background-position: center; }
+              body .content-zone .main-zone .card-zone .card .card-content .card-image.ajou-univ {
+                background-image: url("/images/ajou.univ.homepage.png"); }
+              body .content-zone .main-zone .card-zone .card .card-content .card-image.instagram {
+                background-image: url("/images/instagram.png"); }
+            body .content-zone .main-zone .card-zone .card .card-content .card-name {
+              width: 100%;
+              height: 40px;
+              padding: 0 10px;
+              line-height: 40px;
+              font-size: 15px;
+              text-align: center;
+              font-weight: bold; }
+            body .content-zone .main-zone .card-zone .card .card-content .card-explain {
+              width: 100%;
+              height: calc(30% - 40px);
+              padding: 0 20px 10px 20px;
+              text-align: center;
+              font-size: 12px;
+              overflow-y: auto; }
 
 /*# sourceMappingURL=index2.css.map */

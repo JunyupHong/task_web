@@ -1,25 +1,35 @@
 const bubbleGenerate = new function () {
-
     let tick = 0;
-
     let bubbles = [];
 
     const Bubble = function (size) {
         this.x = Math.random() * width;
-        this.y = height + 100;
+        this.y = height + size;
         this.size = size;
         this.time = 0;
-        this.vx = Math.random() * 5 - 2.5;
-        this.vy = Math.random() * 4 + 1;
+        this.vy = Math.abs(Math.random() * 3) + 1;
+        this.vx = 3 - this.vy / 2;
         this.update = () => {
-            if ((this.time + Math.random() * 5) % 50 < 25)
+            if ((this.time % 60) < 30) {
+
+                if ((this.time % 60) < 15) {
+                    this.vx += (3 - this.vy / 2) / 15;
+                }
+                else {
+                    this.vx -= (3 - this.vy / 2) / 15;
+                }
                 this.x += this.vx;
+            }
             else {
+                if ((this.time % 60) < 45) {
+                    this.vx += (3 - this.vy / 2) / 15;
+                }
+                else {
+                    this.vx -= (3 - this.vy / 2) / 15;
+                }
                 this.x -= this.vx;
             }
             this.y -= this.vy;
-            // this.vx += Math.random() * 1 - 0.5;
-            // this.vy += Math.random() * 1 - 0.5;
 
         };
         return this;
@@ -28,15 +38,18 @@ const bubbleGenerate = new function () {
 
     let sum = 0;
     this.generate = () => {
-        const size = mic.getLevel() * 360 + 25;
+        let size = mic.getLevel() * 360 + 15 + Math.random() * 10;
+        if (size > 300) {
+            size = 300;
+        }
+
         const count = Math.floor(mic.getLevel() * 30) + 1;
 
-        if (tick % 4 === 0) {
+        if (tick % 8 === 0) {
             for (let i = 0; i < count; i++) {
                 bubbles[sum] = new Bubble(size);
                 sum++;
-                // sum %= 500;
-                sum %=1000;
+                sum %= 1000;
             }
         }
 
@@ -45,7 +58,6 @@ const bubbleGenerate = new function () {
 
     this.update = (volume) => {
         tick++;
-        console.log(bubbles.length);
 
         const count = volume * 50;
         if (count === 0) {

@@ -4,7 +4,8 @@
 body
   margin: 0
   padding: 0
-  min-width: 1024px
+  width: 100vw
+  height: 100vh
 
 
 .content
@@ -39,12 +40,14 @@ i
 
 
 .fixed-zone
-  z-index: 0
+  z-index: 3
   height: 400px
   position: fixed
   background: white
   border-bottom: solid 1px #b4b4b4
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+  left: calc((100% - 1024px)/2)
+
   .content
     position: relative
     .circle-zone
@@ -53,6 +56,7 @@ i
       display: flex
       height: 60px
       border-bottom: solid 1px #b4b4b4
+      padding: 0 10px
       .camera-image
         height: 80%
         flex: 1
@@ -207,9 +211,7 @@ i
 
 .moved-zone
   z-index: -1
-  position: absolute
-  left: 0
-  top: 400px
+  padding-top: 400px
   background: rgba(235, 235, 235, 0.87)
   .content
     width: 1054px
