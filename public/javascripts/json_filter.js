@@ -69,8 +69,8 @@
 
     const mergeInfo = function (arr) {
         const margedInfo = [];
-        for (var i = 0; i < arr.length; i++) {
-            for (var j = 0; j < arr[i].items.length; j++) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].items.length; j++) {
                 margedInfo.push(arr[i].items[j]);
             }
         }
@@ -79,7 +79,7 @@
 
     const setFilteredInfo = function (arr) {
         const temp = [];
-        for (var i = 0; i < arr.length; i++)
+        for (let i = 0; i < arr.length; i++)
             temp.push(arr[i]);
         filteredInfo = [];
         filteredInfo = JSON.parse(JSON.stringify(temp));
@@ -88,7 +88,7 @@
 
     const obtainNames = function (arr) {
         names = [];
-        for (var i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
             names.push(arr[i].name);
         }
         console.log(names);
@@ -96,7 +96,7 @@
 
 
     const showScreen = function () {
-        for (var i = 0; i < names.length; i++) {
+        for (let i = 0; i < names.length; i++) {
             $filterResultZone.append(`
                 <div class="name-zone">${names[i]}</div>
             `);
@@ -123,7 +123,7 @@
             setFilteredInfo(mergeInfo(filteredInfo));
         } else {
             let change = false;
-            for (var i = 0; i < filteredInfo.length; i++) {
+            for (let i = 0; i < filteredInfo.length; i++) {
                 if (filter[1] === filteredInfo[i].year + '') {
                     setFilteredInfo(filteredInfo[i].items);
                     change = true;
@@ -139,7 +139,7 @@
             setFilteredInfo(mergeInfo(filteredInfo));
         } else {
             let change = false;
-            for (var i = 0; i < filteredInfo.length; i++) {
+            for (let i = 0; i < filteredInfo.length; i++) {
                 if (filter[2] === filteredInfo[i].age + '') {
                     setFilteredInfo(filteredInfo[i].items);
                     change = true;

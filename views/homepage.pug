@@ -1,0 +1,38 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet", type="text/css", href="/stylesheets/homepage.css")
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.0.13/css/all.css", integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp", crossorigin="anonymous")
+        script(src="https://code.jquery.com/jquery-3.3.1.min.js", integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", crossorigin="anonymous")
+        script(src='/javascripts/p5.js')
+        script(src='/javascripts/addons/p5.dom.min.js')
+        script(src='/javascripts/addons/p5.sound.min.js')
+    body
+        #canvas
+        .profile-zone
+            .profile-name junyup0319.github.io
+            .input-zone
+                i.fas.fa-search
+                input(type='text', placeholder='search tag')
+        .content-zone
+            .main-zone
+                .count-zone
+                    .count-box
+                        .count-box-number#totalNumber
+                        .count-box-name Total Count
+                    .count-box
+                        .count-box-number#selectedNumber
+                        .count-box-name Selected
+
+
+                .card-zone
+
+
+
+
+
+
+    script(src="/javascripts/homepage.js")
+
+    script(src="/javascripts/bubble.generator.js")
