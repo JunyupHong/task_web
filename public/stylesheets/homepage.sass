@@ -8,9 +8,11 @@ body
   #canvas
     position: absolute
     z-index: -3
+
 .profile-zone
   z-index: 3
   width: 100%
+  min-width: 400px
   height: 250px
   background: rgba(241, 241, 241, 0.8)
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1)
@@ -40,6 +42,7 @@ body
       border-radius: 5px
       border: solid 1px #cccccc
       color: #555555
+
 .content-zone
   margin: auto
   max-width: 960px
@@ -51,6 +54,7 @@ body
 
     .count-zone
       width: 99%
+      min-width: 300px
       height: 130px
       margin: 0 0.5%
       border: solid 1px #cccccc
@@ -75,23 +79,22 @@ body
           color: #888888
           font-size: 20px
 
-
     .card-zone
       width: 100%
       margin-top: 50px
       display: flex
       flex-wrap: wrap
-      align-items: center
       .card
-        width: calc(100%/3)
+        width: calc(100% / 3)
         height: 330px
         display: flex
         align-items: center
         justify-content: center
         @media screen and (max-width: 960px)
-          width: calc(100%/2)
+          width: calc(100% / 2)
         @media screen and (max-width: 630px)
           width: 100%
+          min-width: 300px
         .card-content
           width: 95%
           height: 95%
@@ -132,6 +135,8 @@ body
             .card-tag-zone
               display: flex
               height: 20px
+              width: 100%
+              padding: 0 5px
               line-height: 20px
               overflow-x: auto
               -ms-overflow-style: none
@@ -141,6 +146,9 @@ body
                 padding: 0 5px
                 font-size: 12px
                 color: rgba(0, 0, 0, 0.4)
+                &:hover
+                  color: #2b26cb
+                  text-decoration: underline
             .card-explain
               height: calc(100% - 40px - 20px)
               padding: 2px 0
