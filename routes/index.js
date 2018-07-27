@@ -67,4 +67,10 @@ router.get('/homepage', function(req, res, next) {
     res.render('homepage');
 });
 
+router.get('/homepage/masonry', function(req, res, next) {
+    res.render('homepage.masonry.pug');
+});
+
+
+
 module.exports = router;

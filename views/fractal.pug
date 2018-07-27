@@ -14,15 +14,17 @@ block content
             input(type='range', min=0, max=6, step = 1, name='childBranchCount')
             .option-bar-name Child Branch Angle
             input(type='range', min=0, max=50, step = 1, name='childBranchAngle')
-            .option-bar-name Child Branch Length (radio)
+            .option-bar-name Child Branch Length (ratio)
             input(type='range', min=0, max=2, step = 0.01, name='childBranchLength')
             .option-bar-name Start Color
             input(type='color', name='startColor', value='#ff0000')
             .option-bar-name End Color
             input(type='color', name='endColor', value='#ffffff')
         .button-zone
-            .draw-button#exec exec
-            .draw-button#pause pause
+            .button#exec exec
+            .button#pause pause
+
+            .button#saveButton save
     #canvas
 
 
@@ -30,6 +32,7 @@ block content
     script(src="/javascripts/p5.js")
     script(src="/javascripts/fractalSketch.js")
     script(src="/javascripts/fractal.js")
+
 
 
 

@@ -1,6 +1,6 @@
 
+const $root = $('body');
 function setup(){
-    const $root = $('body');
     const canvas = createCanvas($root.width(), $root.height());
     canvas.parent('canvas');
     background(0);
@@ -13,7 +13,7 @@ const data = {};
 
 $('#exec').on('click', () => {
     background(0);
-
+    fractal.delLineData();
 
     fractal.setTickZero();
 
@@ -45,6 +45,13 @@ $pauseButton.on('click', () => {
     }
 });
 
+
+const $saveButton = $('#saveButton');
+
+$saveButton.on('click', () => {
+
+    Canvas2Image.saveAsPNG(canvas, $root.width(), $root.height());
+});
 
 
 

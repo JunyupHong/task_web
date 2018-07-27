@@ -10,6 +10,8 @@ const fractal = new function () {
         }
     };
 
+
+
     const setLineData = (x1, y1, degree, depth) => {
         if (depth > fractalData.depth) return;
 
@@ -108,6 +110,9 @@ const fractal = new function () {
         drawLineByDepth(lineData[depth]);
     };
 
+    this.delLineData =  () => {
+        lineData = {};
+    };
 
 
     return this;

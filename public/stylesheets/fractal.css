@@ -10,40 +10,37 @@ body {
   left: 10px;
   top: 10px;
   width: 260px;
-  height: 360px;
   border: solid 1px #555555; }
   .option-zone .option-name {
     font-size: 30px;
     color: #cccccc;
     text-align: center; }
   .option-zone .option-bar-zone {
-    padding: 10px 20px;
+    padding: 8px 20px 13px 20px;
     overflow-y: auto;
-    height: 75%;
     border-top: solid 1px #333333;
     border-bottom: solid 1px #333333; }
-    .option-zone .option-bar-zone .option-bar-name {
-      margin-top: 15px;
-      font-size: 20px;
-      color: #aaaaaa; }
-    .option-zone .option-bar-zone input {
-      width: 100%; }
-  .option-zone .button-zone {
-    display: flex;
-    padding: 0 16px; }
-    .option-zone .button-zone .draw-button {
-      width: 100px;
-      height: 30px;
-      margin: 12px auto 0 auto;
-      text-align: center;
-      font-size: 20px;
-      line-height: 30px;
-      background: #888888;
-      border-radius: 5px; }
-      .option-zone .button-zone .draw-button:hover {
-        cursor: pointer;
-        background: #3e3e3e;
-        color: #aaaaaa; }
+.option-zone .option-bar-zone .option-bar-name {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #aaaaaa; }
+.option-zone .option-bar-zone input {
+  width: 100%; }
+.option-zone .button-zone {
+  padding: 0 8px; }
+.option-zone .button-zone .button {
+  width: 200px;
+  height: 30px;
+  margin: 12px auto 12px auto;
+  text-align: center;
+  font-size: 20px;
+  line-height: 30px;
+  background: #888888;
+  border-radius: 5px; }
+.option-zone .button-zone .button:hover {
+  cursor: pointer;
+  background: #3e3e3e;
+  color: #aaaaaa; }
 
 #canvas {
   width: 100vw;
