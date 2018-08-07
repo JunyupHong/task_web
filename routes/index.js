@@ -71,6 +71,13 @@ router.get('/homepage/masonry', function(req, res, next) {
     res.render('homepage.masonry.pug');
 });
 
+router.get('/test', function(req, res, next) {
+    res.render('test.pug');
+});
+
+router.get('/driveSystem', function(req, res, next) {
+    res.render('driveSystem.pug');
+});
 
 
 module.exports = router;

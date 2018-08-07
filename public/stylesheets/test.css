@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh; }
+
+#slider12c .slider-selection {
+  background: yellow; }
+
+#slider13c .slider-selection {
+  background: red; }
+
+.slider-zone {
+  width: 300px;
+  height: 50px;
+  margin: auto;
+  border: solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .slider-zone .bar {
+    width: 95%;
+    height: 30%;
+    border: solid 1px #eeeeee;
+    border-radius: 12px;
+    display: flex;
+    position: relative;
+    box-shadow: 0 4px 4px 0 rgba(139, 139, 139, 0.18); }
+    .slider-zone .bar .circle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(0, 131, 183, 0.85);
+      top: -4px;
+      z-index: 3;
+      box-shadow: 0 4px 4px 0 rgba(51, 100, 139, 0.18); }
+      .slider-zone .bar .circle:hover {
+        cursor: pointer; }
+      .slider-zone .bar .circle.left {
+        left: 0px; }
+      .slider-zone .bar .circle.right {
+        right: 0px; }
+
+.line {
+  width: 1px;
+  height: 15px;
+  border: solid 1px;
+  position: fixed;
+  top: 50px; }
+
+/*# sourceMappingURL=test.css.map */
