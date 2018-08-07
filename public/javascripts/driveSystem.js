@@ -11,7 +11,7 @@
 // console.log(firebase);
 //
 //
-// // 계속해서 firebsae.auto()를 쓰기 귀찮으므로 auth에 받아서 씀
+// // 계속해서 firebsae.auth()를 쓰기 귀찮으므로 auth에 받아서 씀
 // const auth = firebase.auth();
 //
 // // auth provider
@@ -101,7 +101,6 @@ FirebaseApi.onAuthStateChange(user => {
     else {
         $('#loginButton').css('display', 'block');
         $('#logoutButton').css('display', 'none');
-
     }
 });
 $('#loginButton').on('click', FirebaseApi.signIn);
