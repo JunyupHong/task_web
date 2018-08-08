@@ -80,4 +80,9 @@ router.get('/driveSystem', function(req, res, next) {
 });
 
 
+router.get('/asyncExample', function(req, res, next) {
+    res.render('asyncExample.pug');
+});
+
+
 module.exports = router;

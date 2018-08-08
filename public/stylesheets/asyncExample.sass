@@ -1,0 +1,46 @@
+*
+  box-sizing: border-box
+body
+  margin: 0
+  padding: 0
+  width: 100vw
+  height: 100vh
+
+.text-zone
+  margin: 50px auto
+  width: 500px
+  height: 160px
+  border: solid 1px
+  display: flex
+  flex-wrap: wrap
+  .person
+    margin: auto
+    text-align: center
+    font-size: 25px
+    width: 80px
+    &.background
+      background: rgba(73, 210, 89, 0.74)
+    &:hover
+      background: rgba(73, 210, 89, 0.74)
+      cursor: pointer
+.button
+  width: 100px
+  height: 40px
+  margin: 0 auto 50px auto
+  background: #00B7FF
+  border-radius: 5px
+  text-align: center
+  color: white
+  line-height: 40px
+  &:hover
+    cursor: pointer
+    color: #00B7FF
+    background: white
+    border: solid 1px #00B7FF
+.result-zone
+  margin: auto
+  background: #00aa88
+  display: flex
+  flex-wrap: wrap
+  .result
+    margin: 20px
