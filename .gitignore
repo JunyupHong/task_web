@@ -166,4 +166,4 @@ typings/
 .serverless
 
 
-/public/javascripts/firebaseInitial.js
+public/javascripts/firebaseInitial.js
