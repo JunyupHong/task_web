@@ -1,0 +1,64 @@
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+
+.window
+  width: 100vw
+  height: 100vh
+  background: #fffccc
+  display: flex
+  .client-zone
+    width: 400px
+    height: 500px
+    background: #fdfdfd
+    border: solid 1px #cccccc
+    border-radius: 8px
+    margin: auto
+    .text-zone
+      text-align: center
+      font-size: 30px
+    .input-zone
+      font-size: 20px
+      width: 100%
+      height: 50px
+      display: flex
+      justify-content: center
+      align-items: center
+      input
+        width: 200px
+        height: 25px
+    .result-zone
+      width: 100%
+      height: calc(100% - 80px)
+      padding: 16px
+      .result
+        border: solid 1px
+        width: 100%
+        font-size: 20px
+        color: #333333
+        margin: 5px 0
+
+  .server-zone
+    width: 400px
+    height: 500px
+    margin: auto
+    background: #fdfdfd
+    border: solid 1px #cccccc
+    border-radius: 5px
+    .text-zone
+      text-align: center
+      font-size: 30px
+
+    .result-zone
+      width: 100%
+      padding: 66px 16px 16px 16px
+      height: calc(100% - 30px)
+      .result
+        border: solid 1px
+        width: 100%
+        font-size: 20px
+        color: #333333
+        margin: 5px 0

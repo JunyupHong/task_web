@@ -1,0 +1,21 @@
+html
+  head
+    meta(charset='UTF-8')
+    title WebSocket
+    link(rel='stylesheet', href='/stylesheets/broadcast.css')
+    script(src="https://code.jquery.com/jquery-3.3.1.js", integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=", crossorigin="anonymous")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js')
+
+
+  body
+    .window
+      .client-zone
+        .text-zone client
+        .input-zone
+          input(type="text")
+        .result-zone
+      .server-zone
+        .text-zone server
+        .result-zone
+
+    script(src='/javascripts/broadcast.client.js')
