@@ -85,4 +85,17 @@ router.get('/asyncExample', function(req, res, next) {
 });
 
 
+router.get('/driveTest', function(req, res, next) {
+    res.render('driveTest.pug');
+});
+
+router.get('/drive', function(req, res, next) {
+    res.render('drive.pug');
+});
+
+router.get('/broadcast', function(req, res, next) {
+  res.render('broadcast');
+});
+
+
 module.exports = router;

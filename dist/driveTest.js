@@ -1,23 +1,23 @@
+'use strict';
 
-FirebaseApi1.onAuthStateChange(user => {
+FirebaseApi1.onAuthStateChange(function (user) {
     if (user) {
         $('#loginButton').css('display', 'none');
         $('#logoutButton').css('display', 'block');
 
-        db.collection("users").get().then((querySnapshot) => {
-            let isSame = false;
-            querySnapshot.forEach((doc) => {
-                if(doc.id === user.uid) {
+        db.collection("users").get().then(function (querySnapshot) {
+            var isSame = false;
+            querySnapshot.forEach(function (doc) {
+                if (doc.id === user.uid) {
                     FirestoreApi.updateUser(user);
                     isSame = true;
                 }
             });
-            if(!isSame) {
+            if (!isSame) {
                 FirestoreApi.storeUser(user);
             }
         });
-    }
-    else {
+    } else {
         $('#loginButton').css('display', 'block');
         $('#logoutButton').css('display', 'none');
     }
@@ -25,5 +25,3 @@ FirebaseApi1.onAuthStateChange(user => {
 $('#loginButton').on('click', FirebaseApi1.signIn);
 
 $('#logoutButton').on('click', FirebaseApi1.signOut);
-
-
