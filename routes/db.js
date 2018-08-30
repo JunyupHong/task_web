@@ -5,8 +5,8 @@ const _ = require('lodash');
 const redisDB = {
   createUser: (key, value) => {
     return new Promise((resolve, reject) => {
-      client.get(key, (val, err)=> {
-        if(_.isNil(val)) {
+      client.get(key, (val, err) => {
+        if (_.isNil(val)) {
           client.hmset(key, value, (err) => {
             if (_.isNil(err)) resolve(value);
             else reject(err);
@@ -23,24 +23,23 @@ const redisDB = {
   getUser: (key) => {
     return new Promise((resolve, reject) => {
       client.hgetall(key, function (err, value) {
-        console.log(key, value);
-        if(_.isNil(err)) resolve(value);
+        if (_.isNil(err)) resolve(value);
         else reject(err);
       });
-    //   client.get(key, function (err, value) {
-    //     const d = {};
-    //     try {
-    //       d[key] = JSON.parse(value);
-    //     } catch (e) {
-    //       d[key] = value;
-    //     }
-    //     if (_.isNil(err)) resolve(d);
-    //     else reject();
-    //   });
+      //   client.get(key, function (err, value) {
+      //     const d = {};
+      //     try {
+      //       d[key] = JSON.parse(value);
+      //     } catch (e) {
+      //       d[key] = value;
+      //     }
+      //     if (_.isNil(err)) resolve(d);
+      //     else reject();
+      //   });
     });
   },
 
-  getUsers: function() {
+  getUsers: function () {
     return new Promise((resolve, reject) => {
       client.keys('*', async (err, keys) => {
         if (_.isNil(err)) {
@@ -50,9 +49,37 @@ const redisDB = {
       });
     });
   },
-  updateUser: () => {
+
+  updateUser: (key, value) => {
+    return new Promise((resolve, reject) => {
+      client.get(key, (val, err) => {
+        if (!_.isNil(val)) {
+          client.hmset(key, value, (err) => {
+            if (_.isNil(err)) resolve(value);
+            else reject(err);
+          });
+        }
+        else {
+          reject();
+        }
+      });
+
+    });
   },
-  deleteUser: () => {
+  deleteUser: (key) => {
+    return new Promise((resolve, reject) => {
+      client.del(key, (err, val) => {
+        if (!_.isNil(err)) {
+          reject(err);
+          return;
+        }
+        if (val !== 0) {
+          resolve('del');
+        } else {
+          reject('no data');
+        }
+      })
+    })
   },
 };
 
@@ -68,9 +95,10 @@ const redisDB = {
 //
 // test();
 
-async function test() {
-  console.log(await redisDB.createUser('zxc',{name: 'hongjunyup', age: 24}));
-}
-test();
+// async function test() {
+//   console.log(await redisDB.deleteUser('hongjunyup'));
+// }
+//
+// test();
 
 module.exports = redisDB;

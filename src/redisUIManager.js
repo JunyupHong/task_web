@@ -1,4 +1,3 @@
-
 const redisUIManager = new async function () {
   const inputZoneManager = new function () {
     const $button = $('.button');
@@ -26,6 +25,8 @@ const redisUIManager = new async function () {
 
   const $searchButton = $('.search > .click-button');
   const $addButton = $('.add > .click-button');
+  const $deleteButton = $('.delete > .click-button');
+  const $editButton = $('.edit > .click-button');
 
 
   // 얘를 초기화하는 함수로 묶어야하나??
@@ -53,6 +54,14 @@ const redisUIManager = new async function () {
                       </div>`;
 
     user.$ele = $(user.template);
+
+    user.update = (val) => {
+      const texts = user.$ele.find('.text');
+      $(texts[0]).text(`${val.age}`);
+      $(texts[1]).text(`${val.hobby}`);
+      $(texts[2]).text(`${val.food}`);
+
+    };
 
     user.setVisible = () => {
       user.$ele.attr('visible', 'true');
@@ -93,19 +102,24 @@ const redisUIManager = new async function () {
   $addButton.on('click', function () {
     const $this = $(this);
     const inputs = $this.parent().find('input');
+
     const json = {};
 
-
-
-    for(let i = 0; i<inputs.length; i++) {
+    for (let i = 0; i < inputs.length; i++) {
       const key = $(inputs[i]).attr('key');
       json[key] = $(inputs[i]).val();
     }
+    if (json.name === '') {
+      alert('enter name');
+      return;
+    }
 
-    console.log(Object.keys(users).indexOf(json.name));
-    if(Object.keys(users).indexOf(json.name) !== -1) return;
+    if (Object.keys(users).indexOf(json.name) !== -1) return;
 
+    // db에 post
     redisAPI.createUser(json);
+
+    // users에 추가, 그리기
     users[json.name] = json;
     Element(json);
 
@@ -114,5 +128,63 @@ const redisUIManager = new async function () {
     })
   });
 
+  $deleteButton.on('click', async function () {
+    const $this = $(this);
+    let input = $this.parent().find('input').val();
+    if (input === '') {
+      alert('enter name');
+      return;
+    }
+
+
+    try {
+      // delete
+      const returnVal = await redisAPI.deleteUser(input);
+
+      if (returnVal.success === true) {
+        // 여기서는 안보이게하고 뺴준다... 이게 맞는가?
+        users[input].setInvisible();
+        delete users[input];
+      }
+    } catch (e) {
+      console.log(e);
+    }
+
+  });
+
+  $editButton.on('click', function () {
+    const $this = $(this);
+    const inputs = $this.parent().find('input');
+
+    const json = {};
+    for (let i = 0; i < inputs.length; i++) {
+      const key = $(inputs[i]).attr('key');
+      json[key] = $(inputs[i]).val();
+    }
+
+
+    // 없으면 리턴
+    if (Object.keys(users).indexOf(json.name) === -1) return;
+
+
+
+    // 있으면
+    // db에 put
+    redisAPI.updateUser(json);
+
+
+    // users에 update
+    // users[json.name] = json;
+    // console.log(users);
+    // console.log('nnname', users[json.name]);
+    // users[json.name].update();
+    // console.log('2');
+
+
+    _.forEach(users, user => {
+      if(user.name === json.name) user.update(json);
+    })
+
+  });
 
 };

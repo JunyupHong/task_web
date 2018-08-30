@@ -11,20 +11,19 @@ router.get('/', function (req, res, next) {
 router.post('/user', async (req, res, next) => {
   const key = req.body.name;
   const value = req.body;
-  console.log(key, value, 'adsfasdfasdfadsf');
   try {
     await db.createUser(key, value);
     res.json({
       success: true,
       body: {
-        'name' : req.body.name,
-        'age' : req.body.age,
-        'food' : req.body.food,
-        'hobby' : req.body.hobby,
+        'name': req.body.name,
+        'age': req.body.age,
+        'food': req.body.food,
+        'hobby': req.body.hobby,
       },
     });
   }
-  catch(e) {
+  catch (e) {
     res.json({
       success: false,
       body: {},
@@ -33,17 +32,50 @@ router.post('/user', async (req, res, next) => {
 });
 
 
-
 router.get('/user/:name', async (req, res, next) => {
   const key = req.params.name;
-  console.log(key);
   const user = await db.getUser(key);
   res.send(user);
 });
 
 router.get('/users', async (req, res, next) => {
-  const users = await db.getUsers(db.getUser);
+  const users = await db.getUsers();
   res.send(users);
+});
+
+router.put('/user', async (req, res, next) => {
+  try {
+    await db.updateUser(req.body.name, req.body);
+    res.json({
+      success: true,
+      body: {
+        'name': req.body.name,
+        'age': req.body.age,
+        'food': req.body.food,
+        'hobby': req.body.hobby,
+      },
+    });
+  } catch (e) {
+    res.json({
+      success: false,
+      body: {}
+    });
+  }
+});
+
+router.delete('/user/:name', async (req, res, next) => {
+  try {
+    await db.deleteUser(req.params.name);
+    res.json({
+      success: true,
+    })
+  }
+  catch (e) {
+    console.log(e);
+    res.json({
+      success: false,
+    })
+  }
 });
 
 
